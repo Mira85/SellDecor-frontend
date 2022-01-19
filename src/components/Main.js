@@ -7,7 +7,9 @@ import Home from "../pages/Home";
 function Main (props) {
     const [item, setItem] = useState(null);
 
-const URL ="https://selldecor-backend.herokuapp.com/item";
+
+    const URL ="http://localhost:3001/item";
+//const URL ="https://selldecor-backend.herokuapp.com/item";
 
 const getItem = async () => {
     const response = await fetch(URL);
@@ -15,7 +17,9 @@ const getItem = async () => {
     setItem(data);
 }
 
-const createitem = async(item) => {
+const createItem = async(item) => {
+    console.log("itemtosell", item)
+    item.price = 100.0;
     await fetch(URL, {
        method: "POST",
        headers: {
@@ -23,7 +27,7 @@ const createitem = async(item) => {
        },
        body: JSON.stringify(item),
     });
-    getItem();
+    //getItem();
 }
 
 useEffect(() => getItem(), [])
@@ -38,7 +42,7 @@ useEffect(() => getItem(), [])
                     <Index items={item} />
                 </Route>
                 <Route path="/profile">
-                    <Profile createitem={createitem}/>
+                    <Profile createItem={createItem}/>
                 </Route>
             </Switch>
             </main>
