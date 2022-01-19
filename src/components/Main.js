@@ -10,10 +10,10 @@ function Main(props) {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/index">
+                <Route path="/index">
                     <Index />
                 </Route>
-                <Route exact path="/profile">
+                <Route path="/profile">
                     <Profile />
                 </Route>
             </Switch>
