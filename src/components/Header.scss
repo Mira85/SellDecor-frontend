@@ -1,6 +1,3 @@
-// --------------------------
-// VARIABLES
-// --------------------------
 $maincolor: black;
 $contrastcolor: white;
 
@@ -13,10 +10,6 @@ $contrastcolor: white;
   color: $maincolor;
   background-color: $contrastcolor;
 }
-
-// --------------------------
-// Header
-// --------------------------
 
 nav {
   @include white-text-black-bg;

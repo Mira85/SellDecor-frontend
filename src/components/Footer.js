@@ -1,5 +1,9 @@
+import "./Footer.scss";
+
 function Footer(props) {
-    return <h1>Created By Mira Makadia</h1>;
+    return <footer className="footer">
+        Created By Mira Makadia
+    </footer>
 }
 
 export default Footer;
