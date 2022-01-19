@@ -4,7 +4,7 @@ import Profile from "../pages/Profile";
 import Index from "../pages/Index";
 import Home from "../pages/Home";
 
-function Main(props) {
+function Main (props) {
     const [item, setItem] = useState(null);
 
 const URL ="https://selldecor-backend.herokuapp.com/item";
@@ -13,6 +13,17 @@ const getItem = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setItem(data);
+}
+
+const createitem = async(item) => {
+    await fetch(URL, {
+       method: "POST",
+       headers: {
+           "Content-Type": "Application/json",
+       },
+       body: JSON.stringify(item),
+    });
+    getItem();
 }
 
 useEffect(() => getItem(), [])
@@ -27,7 +38,7 @@ useEffect(() => getItem(), [])
                     <Index items={item} />
                 </Route>
                 <Route path="/profile">
-                    <Profile />
+                    <Profile createitem={createitem}/>
                 </Route>
             </Switch>
             </main>
