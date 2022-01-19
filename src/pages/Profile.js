@@ -1,4 +1,4 @@
-import Items from './Items';
+import Items from './ItemsToSell';
 import Favorites from './Favorites';
 
 function Profile(props) {
