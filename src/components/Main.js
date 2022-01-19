@@ -24,7 +24,7 @@ useEffect(() => getItem(), [])
                     <Home />
                 </Route>
                 <Route path="/index">
-                    <Index item={item} />
+                    <Index items={item} />
                 </Route>
                 <Route path="/profile">
                     <Profile />
