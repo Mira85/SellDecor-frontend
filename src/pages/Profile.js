@@ -1,5 +1,21 @@
+import Items from './Items';
+import Favorites from './Favorites';
+
 function Profile(props) {
-    return <h1>Profile component</h1>;
+    return (
+        <div>
+            <div className="profileDetails">
+                Name:
+                </div>
+                <div className="itemsToSell">
+                    <Items />
+                </div>
+                <div className="favorites">
+                    <Favorites />
+                </div>
+        </div>
+    )
+
 }
 
 export default Profile;
