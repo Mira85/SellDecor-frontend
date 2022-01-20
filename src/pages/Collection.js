@@ -1,8 +1,39 @@
 import { Link } from "react-router-dom";
 
 function Collection(props) {
+   return  <div>
 
-    //loaded function
+    <h1 className="indexHdr">Items to Sell</h1>
+<div className="areaTable">
+    <table className="itemTable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {props.itemsArr.items.map((item, index) => {
+            const { name, category, img, price } = item;
+            return (
+
+                <tr className="tb-row">
+            
+                        <td>{name}</td>
+                        <td>{category}</td>
+                    <td><img src={img} alt={name} /></td>
+                    <td>{price}</td>
+                    <td><button>Update</button><button>Delete</button></td>
+                </tr>
+            )
+        })}
+        </tbody>
+    </table>
+</div>
+</div>
+   /*  //loaded function
     const loaded = () => {
         return props.itemsArr.items.map((item) => (
             <div key={item._id} className="item">
@@ -17,7 +48,11 @@ function Collection(props) {
         return <h1>Loading...</h1>
     }
 
-    return props.itemsArr.items ? loaded() : loading()
+    return props.itemsArr.items ? loaded() : loading() */
 }
+
+
+
+
 
 export default Collection;

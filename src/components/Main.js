@@ -15,19 +15,21 @@ const getItem = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setItem(data);
+    console.log('itemstate', item)
 }
 
-const createItem = async(item) => {
-    console.log("itemtosell", item)
-    item.price = 100.0;
+const createItem = async(createdItem) => {
+    //conversion of price(string) to number
+    createdItem.price = parseInt(createdItem.price);
+    console.log("itemtosell", createdItem.price)
     await fetch(URL, {
        method: "POST",
        headers: {
            "Content-Type": "Application/json",
        },
-       body: JSON.stringify(item),
+       body: JSON.stringify(createdItem),
     });
-    //getItem();
+    getItem();
 }
 
 useEffect(() => getItem(), [])
@@ -42,7 +44,7 @@ useEffect(() => getItem(), [])
                     <Index items={item} />
                 </Route>
                 <Route path="/profile">
-                    <Profile createItem={createItem}/>
+                    <Profile items={item} createItem={createItem} />
                 </Route>
             </Switch>
             </main>

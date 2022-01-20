@@ -2,6 +2,7 @@ import Collection from './Collection';
 import Cart from './Cart';
 
 function Index(props) {
+    console.log('index props', props)
     return (
         <div>
                 <div className="collection">

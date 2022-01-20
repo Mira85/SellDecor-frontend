@@ -1,15 +1,16 @@
-import ItemsToSell from './ItemsToSell';
-import Favorites from './Favorites';
+import ItemsToSell from "./ItemsToSell";
+import Favorites from "./Favorites";
+import "./Profile.scss";
 
 function Profile(props) {
-    console.log(props.createItem)
+    console.log('profileprops', props)
     return (
-        <div>
+        <div className="profileContainer">
             <div className="profileDetails">
                 Name:
                 </div>
                 <div className="itemsToSell">
-                    <ItemsToSell createItemFunc={props}/>
+                    <ItemsToSell {...props}/>
                 </div>
                 <div className="favorites">
                     <Favorites />
