@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom"
 import Profile from "../pages/Profile";
 import Index from "../pages/Index";
 import Home from "../pages/Home";
+import CreateForm from "../pages/CreateForm";
+import UpdateForm from "../pages/UpdateForm";
 
 function Main (props) {
     const [items, setItems] = useState({
@@ -40,8 +42,8 @@ const createItem = async(createdItem) => {
     getItems();
 }
 
-const updateItem = async(item, id) => {
-    await fetch(URL + id, {
+const updateItem = async(item) => {
+    await fetch(URL + item._id, {
         method: "PUT",
         headers: {
             "content-Type": "Application/json"
@@ -49,6 +51,12 @@ const updateItem = async(item, id) => {
         body: JSON.stringify(item)
     });
     getItems();
+}
+
+const handleUpdate = (itm) => {
+    console.log('clicked')
+    const updateItem = {...items, eachItem:itm, value:!items.value};
+    setItems(updateItem);
 }
 
 useEffect(() => getItems(), [])
@@ -63,7 +71,10 @@ useEffect(() => getItems(), [])
                     <Index {...items} />
                 </Route>
                 <Route path="/profile">
-                    <Profile {...items} createItem={createItem} updateItem={updateItem} />
+                    <Profile {...items} 
+                    createItem={createItem} 
+                    updateItem={updateItem}
+                    handleUpdate={handleUpdate} />
                 </Route>
             </Switch>
             </main>

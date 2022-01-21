@@ -2,14 +2,15 @@ import CreateForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
 
 function ItemsToSell(props) {
-    console.log("props.itemdata", props.itemsData)
+    console.log("props.itemdata", props)
 
     const handleClick = (itm) => {
         props.deleteCheese(itm._id);
     }
 
     const loaded = () => {
-        return <div>
+        return (
+        <div>
 
             <h1 className="indexHdr">Items to Sell</h1>
             <div className="areaTable">
@@ -45,6 +46,7 @@ function ItemsToSell(props) {
                 </table>
             </div>
         </div>
+        )
 
     }
 
