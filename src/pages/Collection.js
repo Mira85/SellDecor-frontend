@@ -15,11 +15,11 @@ function Collection(props) {
         </tr>
         </thead>
         <tbody>
-        {props.itemsArr.items.map((item, index) => {
+        {props.itemsArr.items.map((item) => {
             const { name, category, img, price } = item;
             return (
 
-                <tr className="tb-row">
+                <tr key={item._id} className="tb-row">
             
                         <td>{name}</td>
                         <td>{category}</td>

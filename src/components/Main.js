@@ -5,17 +5,25 @@ import Index from "../pages/Index";
 import Home from "../pages/Home";
 
 function Main (props) {
-    const [item, setItem] = useState(null);
+    const [items, setItems] = useState({
+        itemData : [],
+        eachItem:[],
+        value: true
+    });
 
 
-    const URL ="http://localhost:3001/item";
+    const URL ="http://localhost:3001/item/";
 //const URL ="https://selldecor-backend.herokuapp.com/item";
 
-const getItem = async () => {
+const getItems = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    setItem(data);
-    console.log('itemstate', item)
+    setItems({
+        itemData : [],
+        eachItem:[],
+        value: true
+    });
+    console.log('itemstate', items)
 }
 
 const createItem = async(createdItem) => {
@@ -29,10 +37,21 @@ const createItem = async(createdItem) => {
        },
        body: JSON.stringify(createdItem),
     });
-    getItem();
+    getItems();
 }
 
-useEffect(() => getItem(), [])
+const updateItem = async(item, id) => {
+    await fetch(URL + id, {
+        method: "PUT",
+        headers: {
+            "content-Type": "Application/json"
+        },
+        body: JSON.stringify(item)
+    });
+    getItems();
+}
+
+useEffect(() => getItems(), [])
 
     return (
         <main>
@@ -41,10 +60,10 @@ useEffect(() => getItem(), [])
                     <Home />
                 </Route>
                 <Route path="/index">
-                    <Index items={item} />
+                    <Index {...items} />
                 </Route>
                 <Route path="/profile">
-                    <Profile items={item} createItem={createItem} />
+                    <Profile {...items} createItem={createItem} updateItem={updateItem} />
                 </Route>
             </Switch>
             </main>
