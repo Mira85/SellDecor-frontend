@@ -53,6 +53,14 @@ const updateItem = async(item) => {
     getItems();
 }
 
+const deleteItem = async (id) => {
+    await fetch(URL + id, {
+        method: 'DELETE'
+    })
+    getItems();
+}
+
+
 const handleUpdate = (itm) => {
     console.log('clicked')
     const updateItem = {...items, eachItem:itm, value:!items.value};
@@ -74,7 +82,8 @@ useEffect(() => getItems(), [])
                     <Profile {...items} 
                     createItem={createItem} 
                     updateItem={updateItem}
-                    handleUpdate={handleUpdate} />
+                    handleUpdate={handleUpdate}
+                    deleteItem={deleteItem} />
                 </Route>
             </Switch>
             </main>

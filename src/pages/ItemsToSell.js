@@ -5,7 +5,7 @@ function ItemsToSell(props) {
     console.log("props.itemdata", props)
 
     const handleClick = (itm) => {
-        props.deleteCheese(itm._id);
+        props.deleteItem(itm._id);
     }
 
     const loaded = () => {
