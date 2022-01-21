@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 
 function Main (props) {
     const [items, setItems] = useState({
-        itemData : [],
+        itemsData :[],
         eachItem:[],
         value: true
     });
@@ -19,7 +19,7 @@ const getItems = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setItems({
-        itemData : [],
+        itemsData : data,
         eachItem:[],
         value: true
     });
