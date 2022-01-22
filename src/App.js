@@ -11,6 +11,7 @@ function App() {
     categoryData: [],
     itemsData :[],
     eachItem:[],
+    cartData:[],
     value: true
 });
 
@@ -26,6 +27,7 @@ setItems({
     categoryData: [],
     itemsData : data,
     eachItem:[],
+    cartData:[],
     value: true
 });
 console.log('itemstate', items)
@@ -81,6 +83,11 @@ const handleClickBtn = async (category) => {
   });
 }
 
+const handleAddToCart = (itemToAdd) => {
+  items.cartData.push(itemToAdd);
+  setItems({...items});
+};
+
 useEffect(() => getItems(), [])
   
   return (
@@ -91,7 +98,8 @@ useEffect(() => getItems(), [])
       createItem={createItem} 
       updateItem={updateItem}
       handleUpdate={handleUpdate}
-      deleteItem={deleteItem} />
+      deleteItem={deleteItem}
+      handleAddToCart={handleAddToCart} />
       <Footer />
      
      

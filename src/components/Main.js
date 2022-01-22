@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom"
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
-import Collection from "../pages/Collection";
-import Cart from "../pages/Cart";
+import Category from "../pages/Category";
+
 
 
 function Main (props) {
@@ -14,16 +14,10 @@ function Main (props) {
                     <Home />
                 </Route>
                 <Route path="/profile">
-                    <Profile {...props} 
-                     />
+                    <Profile {...props} />
                 </Route>
                 <Route path="/collection">
-                <div className="collection">
-                    <Collection {...props}/>
-                </div>
-                <div className="cart">
-                    <Cart />
-                </div>
+                    <Category {...props} />
                 </Route>
             </Switch>
             </main>
