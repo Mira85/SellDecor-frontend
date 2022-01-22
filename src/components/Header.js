@@ -16,10 +16,22 @@ function Header(props) {
             <Link to="/profile">
                 <div>Profile</div>
             </Link>
+           
+
             </div>
             <div className="subNav">
-                    <button onClick={()=> props.handleClickBtn("party")}>party</button>
-                    <button onClick={()=> props.handleClickBtn("christmas")}>christmas</button>
+            <Link to="/collection">
+            <button onClick={()=> props.handleClickBtn("party")}>Party</button>
+            </Link>
+            <Link to="/collection">
+            <button onClick={()=> props.handleClickBtn("christmas")}>Christmas</button>
+            </Link>
+            <Link to="/collection">
+            <button onClick={()=> props.handleClickBtn("halloween")}>Halloween</button>
+            </Link>
+            <Link to="/collection">
+            <button onClick={()=> props.handleClickBtn("baby Shower")}>Christmas</button>
+            </Link>
                 </div>
                
         

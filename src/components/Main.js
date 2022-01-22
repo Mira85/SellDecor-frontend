@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import Profile from "../pages/Profile";
 import Index from "../pages/Index";
 import Home from "../pages/Home";
+import Collection from "../pages/Collection";
 
 
 function Main (props) {
@@ -24,6 +25,9 @@ function Main (props) {
                 <Route path="/profile">
                     <Profile {...props} 
                      />
+                </Route>
+                <Route path="/collection">
+                    <Collection {...props} />
                 </Route>
             </Switch>
             </main>

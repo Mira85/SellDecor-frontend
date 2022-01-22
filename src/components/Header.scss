@@ -37,9 +37,11 @@ nav {
 .subNav{
     @include white-text-black-bg;
     display: flex;
-    
-    div {
+
+    button {
         margin: 10px;
         font-size: large;
+        border: none;
+        @include white-text-black-bg;
       }
 }
