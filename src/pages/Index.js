@@ -5,8 +5,9 @@ function Index(props) {
     console.log('index props', props)
     return (
         <div>
+          
                 <div className="collection">
-                    <Collection itemsArr={props}/>
+                    <Collection {...props}/>
                 </div>
                 <div className="cart">
                     <Cart />

@@ -12,16 +12,34 @@ $contrastcolor: white;
 }
 
 nav {
-  @include white-text-black-bg;
+  
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
 
-  a {
-    @include white-text-black-bg;
-
-    div {
-      margin: 10px;
-      font-size: large;
-    }
+  
   }
+
+
+.mainNav{
+    @include black-text-white-bg;
+    display: flex;
+
+    a {
+        @include black-text-white-bg;
+    
+        div {
+          margin: 10px;
+          font-size: large;
+        }
+
+}}
+.subNav{
+    @include white-text-black-bg;
+    display: flex;
+    
+    div {
+        margin: 10px;
+        font-size: large;
+      }
 }
