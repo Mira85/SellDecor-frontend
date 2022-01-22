@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Collection(props) {
+
    return  <div>
 
     <h1 className="indexHdr">Items to Sell</h1>
@@ -15,7 +16,7 @@ function Collection(props) {
         </tr>
         </thead>
         <tbody>
-        {props.itemsData.map((item) => {
+        {props.categoryData.map((item) => {
             const { name, category, img, price } = item;
             return (
 

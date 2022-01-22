@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 function App() {
 
   const [items, setItems] = useState({
+    categoryData: [],
     itemsData :[],
     eachItem:[],
     value: true
@@ -22,6 +23,7 @@ const getItems = async (category) => {
 const response = await fetch(URL);
 const data = await response.json();
 setItems({
+    categoryData: [],
     itemsData : data,
     eachItem:[],
     value: true
@@ -71,9 +73,9 @@ const handleUpdate = (itm) => {
 
 const handleClickBtn = async (category) => {
   const response = await fetch(URL+"?category="+ category);
-  const categoryData = await response.json();
-  setItems({
-      itemsData : categoryData,
+  const dataForCategory = await response.json();
+  setItems({...items,
+      categoryData : dataForCategory,
       eachItem:[],
       value: true
   });
