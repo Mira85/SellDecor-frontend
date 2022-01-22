@@ -10,14 +10,9 @@ function Header(props) {
             <Link to="/">
                 <div>Home</div>
             </Link>
-            <Link to="/index">
-                <div>Index</div>
-            </Link>
             <Link to="/profile">
                 <div>Profile</div>
             </Link>
-           
-
             </div>
             <div className="subNav">
             <Link to="/collection">
@@ -30,7 +25,7 @@ function Header(props) {
             <button onClick={()=> props.handleClickBtn("halloween")}>Halloween</button>
             </Link>
             <Link to="/collection">
-            <button onClick={()=> props.handleClickBtn("baby Shower")}>Christmas</button>
+            <button onClick={()=> props.handleClickBtn("baby Shower")}>Baby Shower</button>
             </Link>
                 </div>
                
