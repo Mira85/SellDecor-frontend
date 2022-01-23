@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Collection(props) {
+    console.log('collection', props)
 
    return  <div>
 
@@ -26,7 +27,7 @@ function Collection(props) {
                         <td>{category}</td>
                     <td><img src={img} alt={name} /></td>
                     <td>{price}</td>
-                    <td><button onClick={()=>props.handleAddToCart(item)}>Add to cart</button><button>favorite</button></td>
+                    <td><button onClick={()=>props.handleAddToCart(item)}>Add to cart</button><button onClick={() =>props.handleAddFavorite(item)}>favorite</button></td>
                 </tr>
             )
         })}

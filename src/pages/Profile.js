@@ -8,12 +8,20 @@ function Profile(props) {
         <div className="profileContainer">
             <div className="profileDetails">
                 Name:
+                {props.user? <img style={{
+                    height: "3.125rem",
+                    width: "3.125rem",
+                    borderRadius: "50%"
+                }}
+
+                    src={props.user.photoURL} alt={props.user.displayName} /> : <h1>no image </h1>} 
+                
                 </div>
                 <div className="itemsToSell">
-                    <ItemsToSell {...props}/>
+                    <ItemsToSell {...props} />
                 </div>
                 <div className="favorites">
-                    <Favorites />
+                    <Favorites {...props} />
                 </div>
         </div>
     )

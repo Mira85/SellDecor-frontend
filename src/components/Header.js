@@ -1,3 +1,4 @@
+import { login, logout } from "../services/firebase";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
@@ -13,6 +14,13 @@ function Header(props) {
             <Link to="/profile">
                 <div>Profile</div>
             </Link>
+            {
+                props.user ?
+                <button onClick={logout}>Logout</button>
+                :
+                
+                <button onClick={login}>Login</button>
+            }
             </div>
             <div className="subNav">
             <Link to="/collection">

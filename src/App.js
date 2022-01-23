@@ -1,11 +1,16 @@
+import { auth } from "./services/firebase";
 import './App.css';
 import { useEffect, useState } from "react";
 //Import components
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
+  const[user, setUser] = useState(null);
+  useEffect(() => {
+    auth.onAuthStateChanged(user => setUser(user))
+  }, [])
 
   const [items, setItems] = useState({
     categoryData: [],
@@ -16,12 +21,13 @@ function App() {
 });
 
 
-const URL ="http://localhost:3001/item/";
+const URL_item ="http://localhost:3001/item/";
+const URL_user ="http://localhost:3001/user/";
 //const URL ="https://selldecor-backend.herokuapp.com/item";
 
 const getItems = async (category) => {
 //const response = await fetch(URL +"?category=party" );
-const response = await fetch(URL);
+const response = await fetch(URL_item);
 const data = await response.json();
 setItems({
     categoryData: [],
@@ -37,7 +43,7 @@ const createItem = async(createdItem) => {
   //conversion of price(string) to number
   createdItem.price = parseInt(createdItem.price);
   console.log("itemtosell", createdItem.price)
-  await fetch(URL, {
+  await fetch(URL_item, {
      method: "POST",
      headers: {
          "Content-Type": "Application/json",
@@ -49,7 +55,7 @@ const createItem = async(createdItem) => {
 
 const updateItem = async(item) => {
   console.log('updateditem', item)
-  await fetch(URL + item._id, {
+  await fetch(URL_item + item._id, {
       method: "PUT",
       headers: {
           "content-Type": "Application/json"
@@ -60,7 +66,7 @@ const updateItem = async(item) => {
 }
 
 const deleteItem = async (id) => {
-  await fetch(URL + id, {
+  await fetch(URL_item + id, {
       method: 'DELETE'
   })
   getItems();
@@ -74,7 +80,7 @@ const handleUpdate = (itm) => {
 }
 
 const handleClickBtn = async (category) => {
-  const response = await fetch(URL+"?category="+ category);
+  const response = await fetch(URL_item+"?category="+ category);
   const dataForCategory = await response.json();
   setItems({...items,
       categoryData : dataForCategory,
@@ -88,18 +94,34 @@ const handleAddToCart = (itemToAdd) => {
   setItems({...items});
 };
 
+const handleAddFavorite = async (favoriteItem) => {
+  await fetch(URL_user+"add_favorite?item_id="+ favoriteItem._id, {
+     method: "POST",
+     headers: {
+         "Content-Type": "Application/json",
+     },
+     body: JSON.stringify(favoriteItem),
+  });
+  getItems();
+
+}
+
+
 useEffect(() => getItems(), [])
   
   return (
     <div className="App">
-      <Header handleClickBtn={handleClickBtn}/>
+      <Header handleClickBtn={handleClickBtn}
+      user={user} />
       <Main {...items} 
       getItems={getItems}
       createItem={createItem} 
       updateItem={updateItem}
       handleUpdate={handleUpdate}
       deleteItem={deleteItem}
-      handleAddToCart={handleAddToCart} />
+      handleAddToCart={handleAddToCart}
+      handleAddFavorite={handleAddFavorite}
+      user={user} />
       <Footer />
      
      
