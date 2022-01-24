@@ -7,9 +7,42 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
+  const URL_item ="http://localhost:3001/item/";
+  const URL_user ="http://localhost:3001/user/";
+
   const[user, setUser] = useState(null);
   useEffect(() => {
-    auth.onAuthStateChanged(user => setUser(user))
+    auth.onAuthStateChanged(async user => {
+    
+
+      if (user) {
+        const token = await user.getIdToken();
+        console.log(token);
+
+        const getUser = await fetch(URL_user,{
+          headers: {
+            "Authorization": "Bearer " + token
+          
+        }
+        })
+        const userInfo = await getUser.json();
+        console.log('userinfo', userInfo)
+        if(!userInfo) {
+          await fetch(URL_user, {
+            method: "POST",
+            headers: {
+                "Content-Type": "Application/json",
+                "Authorization": "Bearer " + token
+              
+            },
+            body: JSON.stringify(user),
+         });
+
+        }
+        
+      }
+      
+      setUser(user);})
   }, [])
 
   const [items, setItems] = useState({
@@ -21,17 +54,25 @@ function App() {
 });
 
 
-const URL_item ="http://localhost:3001/item/";
-const URL_user ="http://localhost:3001/user/";
+
 //const URL ="https://selldecor-backend.herokuapp.com/item";
 
 const getItems = async (category) => {
 //const response = await fetch(URL +"?category=party" );
-const response = await fetch(URL_item);
+if(!user) return;
+const token = await user.getIdToken();
+
+const response = await fetch(URL_user+"userinfo", {
+  method:"GET",
+  headers: {
+    "Authorization": "Bearer " + token
+  }
+});
+
 const data = await response.json();
 setItems({
     categoryData: [],
-    itemsData : data,
+    itemsData : data.itemsToSell,
     eachItem:[],
     cartData:[],
     value: true
@@ -40,6 +81,8 @@ console.log('itemstate', items)
 }
 
 const createItem = async(createdItem) => {
+  if(!user) return;
+  const token = await user.getIdToken();
   //conversion of price(string) to number
   createdItem.price = parseInt(createdItem.price);
   console.log("itemtosell", createdItem.price)
@@ -47,6 +90,7 @@ const createItem = async(createdItem) => {
      method: "POST",
      headers: {
          "Content-Type": "Application/json",
+         "Authorization" : "Bearer " + token
      },
      body: JSON.stringify(createdItem),
   });
@@ -54,11 +98,13 @@ const createItem = async(createdItem) => {
 }
 
 const updateItem = async(item) => {
+  const token = await user.getIdToken();
   console.log('updateditem', item)
   await fetch(URL_item + item._id, {
       method: "PUT",
       headers: {
-          "content-Type": "Application/json"
+          "content-Type": "Application/json",
+          "Authorization" : "Bearer " + token
       },
       body: JSON.stringify(item)
   });
@@ -66,8 +112,12 @@ const updateItem = async(item) => {
 }
 
 const deleteItem = async (id) => {
+  const token = await user.getIdToken();
   await fetch(URL_item + id, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+      "Authorization" : "Bearer " + token
+      },
   })
   getItems();
 }
@@ -80,7 +130,7 @@ const handleUpdate = (itm) => {
 }
 
 const handleClickBtn = async (category) => {
-  const response = await fetch(URL_item+"?category="+ category);
+  const response = await fetch(URL_item + category);
   const dataForCategory = await response.json();
   setItems({...items,
       categoryData : dataForCategory,
@@ -107,7 +157,11 @@ const handleAddFavorite = async (favoriteItem) => {
 }
 
 
-useEffect(() => getItems(), [])
+useEffect(() => {
+  if(user) {
+    getItems()
+  }
+}, [user]);
   
   return (
     <div className="App">
