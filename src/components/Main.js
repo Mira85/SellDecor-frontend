@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
 import Category from "../pages/Category";
@@ -14,7 +13,8 @@ function Main (props) {
                     <Home />
                 </Route>
                 <Route path="/profile">
-                    <Profile {...props} />
+                    { props.user ?
+                    <Profile {...props} /> : <Redirect to="/" /> } 
                 </Route>
                 <Route path="/collection">
                     <Category {...props} />
