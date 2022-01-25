@@ -50,7 +50,9 @@ function App() {
     itemsData :[],
     eachItem:[],
     cartData:[],
-    value: true
+    value: true,
+    value: true,
+    favorites:[]
 });
 
 
@@ -75,7 +77,8 @@ setItems({
     itemsData : data.itemsToSell,
     eachItem:[],
     cartData:[],
-    value: true
+    value: true,
+    favorites: data.favorites
 });
 console.log('itemstate', items)
 }
@@ -130,7 +133,13 @@ const handleUpdate = (itm) => {
 }
 
 const handleClickBtn = async (category) => {
-  const response = await fetch(URL_item + category);
+  const token = await user.getIdToken();
+  const response = await fetch(URL_item + category, {
+    headers: {
+      "Authorization" : "Bearer " + token
+      }
+  });
+
   const dataForCategory = await response.json();
   setItems({...items,
       categoryData : dataForCategory,
@@ -145,10 +154,12 @@ const handleAddToCart = (itemToAdd) => {
 };
 
 const handleAddFavorite = async (favoriteItem) => {
+  const token = await user.getIdToken();
   await fetch(URL_user+"add_favorite?item_id="+ favoriteItem._id, {
      method: "POST",
      headers: {
          "Content-Type": "Application/json",
+         "Authorization" : "Bearer " + token
      },
      body: JSON.stringify(favoriteItem),
   });
