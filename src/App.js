@@ -134,12 +134,12 @@ function App() {
   }
 
   const handleClickBtn = async (category) => {
-    const token = await user.getIdToken();
-    const response = await fetch(URL_item + category, {
-      headers: {
-        "Authorization": "Bearer " + token
-      }
-    });
+   // const token = await user.getIdToken();
+    const response = await fetch(URL_item + category)
+ //     headers: {
+     //   "Authorization": "Bearer " + token
+  //    }
+    
 
     const dataForCategory = await response.json();
     setItems({
