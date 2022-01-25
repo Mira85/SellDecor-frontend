@@ -184,6 +184,18 @@ const handleAddFavorite = async (favoriteItem) => {
 }
 
 
+const handleDeleteFavorite = async (item) => {
+  const token = await user.getIdToken();
+  await fetch(URL_user+"delete_favorite?item_id=" + item._id, {
+    method: 'DELETE',
+    headers: {
+      "Authorization": "Bearer " + token
+    },
+  })
+  getItems();
+}
+
+
 
 useEffect(() => {
   if (user) {
@@ -203,6 +215,7 @@ return (
       deleteItem={deleteItem}
       handleAddToCart={handleAddToCart}
       handleAddFavorite={handleAddFavorite}
+      handleDeleteFavorite={handleDeleteFavorite}
       user={user} />
     <Footer />
 
