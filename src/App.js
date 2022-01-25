@@ -155,21 +155,6 @@ function App() {
     setItems({ ...items });
   };
 
-  /* async function getFavorites() {
-    const[favorites, setFavorites] = useState(items);
-    const response = await fetch(URL_user+"userinfo", {
-      method:"GET",
-      headers: {
-        "Authorization": "Bearer " + token
-      }
-    });
-    
-    const data = await response.json();
-    setFavorites({...favorites, 
-        favorites: data.favorites
-    }); */
-
-
 
 const handleAddFavorite = async (favoriteItem) => {
   const token = await user.getIdToken();

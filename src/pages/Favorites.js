@@ -8,7 +8,7 @@ function Favorites(props) {
                 <h1>{item.name}</h1>
            
             <img src={item.image} alt={item.name} />
-            
+            <button onClick={()=>props.handleDeleteFavorite(item)}>Delete</button>
             
         </div>
 
