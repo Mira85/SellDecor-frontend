@@ -33,7 +33,9 @@ function ItemsToSell(props) {
 
                                     <td>{name}</td>
                                     <td>{category}</td>
-                                    <td><img src={img} alt={name} /></td>
+                                    <td><img src={img} alt={name} style={{
+                    height: "3.125rem",
+                    width: "3.125rem"}} /></td>
                                     <td>{price}</td>
                                     <td>
                                         <button onClick={() => props.handleUpdate(item)}>Update</button>

@@ -19,13 +19,16 @@ function Collection(props) {
                 <tbody>
                     {props.categoryItems.map((item) => {
                         const { name, category, img, price } = item;
+                        console.log('collection img url',img)
                         return (
 
                             <tr key={item._id} className="tb-row">
 
                                 <td>{name}</td>
                                 <td>{category}</td>
-                                <td><img src={img} alt={name} /></td>
+                                <td><img src={`process.env.PUBLIC_URL${img}`} alt={name} style={{
+                    height: "3.125rem",
+                    width: "3.125rem",}}/></td>
                                 <td>{price}</td>
                                 <td><button onClick={() => props.handleAddToCart(item)}>Add to cart</button><button onClick={() => props.handleAddFavorite(item)}>favorite</button></td>
                             </tr>
