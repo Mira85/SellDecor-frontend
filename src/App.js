@@ -47,14 +47,33 @@ function App() {
   }, [])
 
   const [items, setItems] = useState({
-    categoryData: [],
+    allItems: [],
+    categoryItems: [],
     itemsData: [],
     eachItem: [],
     cartData: [],
     value: true,
-    value: true,
     favorites: []
   });
+
+
+
+  const getAllItems = async () => {
+
+    const response = await fetch(URL_item)
+    const data = await response.json();
+    setItems({...items,
+      allItems: data,
+      
+    });
+  }
+
+
+  useEffect(() => {
+    
+      getAllItems()
+    
+  }, []);
 
 
 
@@ -73,12 +92,8 @@ function App() {
     });
 
     const data = await response.json();
-    setItems({
-      categoryData: [],
+    setItems({...items,
       itemsData: data.itemsToSell,
-      eachItem: [],
-      cartData: [],
-      value: true,
       favorites: data.favorites
     });
     console.log('itemstate', items)
@@ -135,18 +150,16 @@ function App() {
 
   const handleClickBtn = async (category) => {
    // const token = await user.getIdToken();
-    const response = await fetch(URL_item + category)
+    //const response = await fetch(URL_item + category)
  //     headers: {
      //   "Authorization": "Bearer " + token
   //    }
-    
-
-    const dataForCategory = await response.json();
+    console.log('handleClickBtn:', items)
+  const categoryItems = items.allItems.filter(item => category ===  item.category);
+  
     setItems({
       ...items,
-      categoryData: dataForCategory,
-      eachItem: [],
-      value: true
+      categoryItems: categoryItems,
     });
   }
 

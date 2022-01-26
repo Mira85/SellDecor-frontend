@@ -17,7 +17,7 @@ function Collection(props) {
         </tr>
         </thead>
         <tbody>
-        {props.categoryData.map((item) => {
+        {props.categoryItems.map((item) => {
             const { name, category, img, price } = item;
             return (
 
