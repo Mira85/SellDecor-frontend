@@ -33,7 +33,10 @@ function Header(props) {
             <button onClick={()=> props.handleClickBtn("halloween")}>Halloween</button>
             </Link>
             <Link to="/collection">
-            <button onClick={()=> props.handleClickBtn("baby Shower")}>Baby Shower</button>
+            <button onClick={()=> props.handleClickBtn("easter")}>Easter</button>
+            </Link>
+            <Link to="/collection">
+            <button onClick={()=> props.handleClickBtn("valentines day")}>Valentines Day</button>
             </Link>
                 </div>
                
