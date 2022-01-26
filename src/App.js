@@ -10,7 +10,9 @@ function App() {
   const URL_item = "http://localhost:3001/item/";
   const URL_user = "http://localhost:3001/user/";
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    user: null,
+  });
   useEffect(() => {
     auth.onAuthStateChanged(async user => {
 
@@ -46,22 +48,29 @@ function App() {
     })
   }, [])
 
+  const [userItems, setUserItems] = useState({
+    itemsData: [],
+    favorites: []
+
+  })
+
   const [items, setItems] = useState({
     allItems: [],
     categoryItems: [],
-    itemsData: [],
+    //itemsData: [],
     eachItem: [],
     cartData: [],
     value: true,
-    favorites: []
+   // favorites: []
   });
 
 
 
   const getAllItems = async () => {
-
+ console.log('getAllitems:', 'in')
     const response = await fetch(URL_item)
     const data = await response.json();
+    console.log('data', data)
     setItems({...items,
       allItems: data,
       
@@ -79,7 +88,7 @@ function App() {
 
   //const URL ="https://selldecor-backend.herokuapp.com/item";
 
-  const getItems = async (category) => {
+  const getUserData = async () => {
     //const response = await fetch(URL +"?category=party" );
     if (!user) return;
     const token = await user.getIdToken();
@@ -92,9 +101,10 @@ function App() {
     });
 
     const data = await response.json();
-    setItems({...items,
+    setUserItems({...userItems,
       itemsData: data.itemsToSell,
-      favorites: data.favorites
+      favorites: data.favorites,
+      //value: true
     });
     console.log('itemstate', items)
   }
@@ -113,7 +123,8 @@ function App() {
       },
       body: JSON.stringify(createdItem),
     });
-    getItems();
+    getUserData();
+    getAllItems();
   }
 
   const updateItem = async (item) => {
@@ -127,7 +138,8 @@ function App() {
       },
       body: JSON.stringify(item)
     });
-    getItems();
+    getUserData();
+    getAllItems();
   }
 
   const deleteItem = async (id) => {
@@ -138,7 +150,8 @@ function App() {
         "Authorization": "Bearer " + token
       },
     })
-    getItems();
+    getUserData();
+    getAllItems();
   }
 
 
@@ -205,14 +218,14 @@ const handleDeleteFavorite = async (item) => {
       "Authorization": "Bearer " + token
     },
   })
-  getItems();
+  getUserData();
 }
 
 
 
 useEffect(() => {
   if (user) {
-    getItems()
+    getUserData()
   }
 }, [user]);
 
@@ -221,7 +234,8 @@ return (
     <Header handleClickBtn={handleClickBtn}
       user={user} />
     <Main {...items}
-      getItems={getItems}
+    {...userItems}
+      getUserData={getUserData}
       createItem={createItem}
       updateItem={updateItem}
       handleUpdate={handleUpdate}
