@@ -3,13 +3,14 @@ import Cart from "../pages/Cart";
 import "./Category.scss"
 
 function Category(props) {
+    console.log('category props', props)
     return (
         <div className="collectionContainer">
             <div className="collection">
-                <Collection {...props} />
+                <Collection dataForCategory={props.categoryData} />
             </div>
             <div className="cart">
-                <Cart {...props} />
+                <Cart dataForCart={props.cartData} />
             </div>
         </div>
     )

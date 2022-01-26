@@ -2,7 +2,7 @@ function Cart(props) {
     console.log('cartprops', props)
     return ( 
         
-        props.cartData.map((item) => (
+          props.dataForCart.map((item) => (
         <div key={item._id} className="cartItem">
                 <h1>{item.name}</h1>
            
@@ -10,7 +10,7 @@ function Cart(props) {
             <div>{item.price}</div>
             
         </div>
-    )
+    ) 
     )
     )}
 export default Cart;

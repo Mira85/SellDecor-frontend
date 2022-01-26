@@ -6,6 +6,7 @@ import Category from "../pages/Category";
 
 
 function Main (props) {
+    console.log('main props', props)
     return (
         <main>
             <Switch>
@@ -16,7 +17,7 @@ function Main (props) {
                     { props.user ?
                     <Profile {...props} /> : <Redirect to="/" /> } 
                 </Route>
-                <Route path="/collection">
+                <Route  path="/collection">
                     <Category {...props} />
                 </Route>
             </Switch>
