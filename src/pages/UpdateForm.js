@@ -1,3 +1,4 @@
+import Form from "react-bootstrap/Form";
 import {useState} from "react";
 
 function UpdateForm (props) {
@@ -32,37 +33,49 @@ const handleSubmit = (evt) => {
 
     return (
         <section>
-            <form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
-                <input 
+            <Form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3"  >
+               <Form.Label>Name</Form.Label>
+                <Form.Control
                     type="text"
                     value={editForm.name}
                     name="name"
                     placeholder="Name"
                     onChange={handleChange}
                 />
-                <input 
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label>Category</Form.Label>
+                <Form.Control
                     type="text"
                     value={editForm.category}
                     name="category"
                     placeholder="Category"
                     onChange={handleChange}
                 />
-                <input 
+                 </Form.Group>
+                 <Form.Group className="mb-3">
+                 <Form.Label>Image URL</Form.Label>
+                <Form.Control 
                     type="text"
                     value={editForm.img}
                     name="img"
                     placeholder="imageURL"
                     onChange={handleChange}
                 />
-                 <input 
+                </Form.Group>
+                  <Form.Group className="mb-3">
+                 <Form.Label>Price</Form.Label>
+                 <Form.Control 
                     type="number"
                     value={editForm.price}
                     name="price"
                     placeholder="Price"
                     onChange={handleChange}
                 />
-                <input type="submit" value="Update Item" />
-            </form>
+                </Form.Group>
+                <Form.Control type="submit" value="Update Item" />
+            </Form>
      
         </section>
     )

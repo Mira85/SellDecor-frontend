@@ -19,7 +19,7 @@
         .eachItem{
             display:flex;
             flex-direction: column;
-            border: solid green;
+            //border: solid green;
             height: 18.75rem;
             justify-content: center;
             align-items: center;
@@ -28,20 +28,20 @@
 
         }
 
-        h1 {
+        .itemName {
             display:flex;
-            border: solid blue;
+            
 
         }
 
         img{
             display:flex;
-            border: solid blue;
+          
 
         }
         div{
             display:flex;
-            border: solid blue;
+            
         }
 
 
@@ -60,9 +60,17 @@
         position: absolute;
         top:0;
         right:0;
-        
+        width:35px;
+        height: 35px;   
+    }
+    .GiShoppingCart{
+        position: absolute;
+        top:0;
+        right:33px;
+        width:35px;
+        height: 35px; 
      
-        
+
     }
 
 

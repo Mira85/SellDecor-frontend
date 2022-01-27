@@ -1,4 +1,5 @@
-import{MdOutlineFavoriteBorder} from "react-icons/md";
+import{MdOutlineFavoriteBorder, MdOutlineShoppingCart} from "react-icons/md";
+import{GiShoppingCart} from "react-icons/gi";
 import "./Collection.scss";
 
 function Collection(props) {
@@ -15,18 +16,19 @@ function Collection(props) {
                         console.log('collection img url', img)
                         return (
                             <div key={item._id} className="eachItem">
-                                <h2 className="itemHdr">{name}</h2>
+                               
                                 <div className="imgContainer">
                                 <img src={img} alt={name} style={{
                                     height: "16.125rem",
                                     width: "16.125rem",
                                 }} />
                                 <MdOutlineFavoriteBorder onClick={() => props.handleAddFavorite(item)} className="FaHeart"/>
+                                <MdOutlineShoppingCart onClick={() => props.handleAddToCart(item)} className="GiShoppingCart" />
                                 </div>
-                                
+                                <div className="itemName">{name}</div>
                                 <div>{price}</div>
                                 <div>
-                                    <button onClick={() => props.handleAddToCart(item)}>Add to cart</button>
+                                  
                                     
                                 </div>
                             </div>

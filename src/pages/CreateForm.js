@@ -1,3 +1,5 @@
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button"
 import {useState} from "react";
 
 function CreateForm (props) {
@@ -34,37 +36,50 @@ const handleSubmit = (evt) => {
 
     return (
         <section>
-            <form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
-                <input 
+            
+            <Form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
                     type="text"
                     value={newForm.name}
                     name="name"
                     placeholder="Name"
                     onChange={handleChange}
                 />
-                <input 
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label>Category</Form.Label>
+                <Form.Control 
                     type="text"
                     value={newForm.category}
                     name="category"
                     placeholder="Category"
                     onChange={handleChange}
                 />
-                <input 
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control
                     type="text"
                     value={newForm.img}
                     name="img"
                     placeholder="imageURL"
                     onChange={handleChange}
                 />
-                 <input 
+                </Form.Group>
+                <Form.Group className="mb-3">
+                <Form.Label>Price</Form.Label>
+                 <Form.Control
                     type="number"
                     value={newForm.price}
                     name="price"
                     placeholder="Price"
                     onChange={handleChange}
                 />
-                <input type="submit" value="Create Item" />
-            </form>
+                </Form.Group>
+                <Form.Control  variant="outline-primary" type="submit" value="Create Item" />
+            </Form>
      
         </section>
     )
