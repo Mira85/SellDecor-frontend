@@ -1,37 +1,36 @@
-import { Link } from "react-router-dom";
+import "./Collection.scss";
 
 function Collection(props) {
     console.log('collection', props)
 
     const loaded = () => {
-        return <div>
+        return <div className="collectionArea">
 
-        <h1 className="indexHdr">Items to Sell</h1>
-        <div className="itemArea">
-            <div className="eachitem">
-
-          
+            <h1 className="indexHdr">Items to Sell</h1>
+            <div className="itemArea">
+                
                     {props.categoryItems.map((item) => {
                         const { name, category, img, price } = item;
-                        console.log('collection img url',img)
+                        console.log('collection img url', img)
                         return (
-                            <div key={item._id}>
-                                <h2>{name}</h2>
+                            <div key={item._id} className="eachItem">
+                                <h2 className="itemHdr">{name}</h2>
                                 <img src={img} alt={name} style={{
-                    height: "16.125rem",
-                    width: "16.125rem",}}/>
+                                    height: "16.125rem",
+                                    width: "16.125rem",
+                                }} />
                                 <div>{price}</div>
                                 <div>
                                     <button onClick={() => props.handleAddToCart(item)}>Add to cart</button>
                                     <button onClick={() => props.handleAddFavorite(item)}>favorite</button>
-                                    </div>
-                                    </div>
+                                </div>
+                            </div>
                         )
                     })}
-                  
-                    </div>
-               </div>
-    </div>
+
+                
+            </div>
+        </div>
 
     };
 

@@ -1,0 +1,51 @@
+.collectionArea {
+    display:flex;
+    flex-direction: column;
+    border: solid black;
+    width:100rem;
+
+    .IndexHdr {
+        display:flex;
+    }
+
+    .itemArea {
+        display:flex;
+        flex-wrap: wrap;
+        border: solid red;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-between;
+        
+        .eachItem{
+            display:flex;
+            flex-direction: column;
+            border: solid green;
+            height: 18.75rem;
+            justify-content: center;
+            align-items: center;
+            
+
+
+        }
+
+        h1 {
+            display:flex;
+            border: solid blue;
+
+        }
+
+        img{
+            display:flex;
+            border: solid blue;
+
+        }
+        div{
+            display:flex;
+            border: solid blue;
+        }
+
+
+    }
+
+
+}

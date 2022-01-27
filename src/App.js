@@ -10,9 +10,7 @@ function App() {
   const URL_item = "http://localhost:3001/item/";
   const URL_user = "http://localhost:3001/user/";
 
-  const [user, setUser] = useState({
-    user: null,
-  });
+  const [user, setUser] = useState(null);
   useEffect(() => {
     auth.onAuthStateChanged(async user => {
 
@@ -39,14 +37,11 @@ function App() {
             },
             body: JSON.stringify(user),
           });
-
         }
-
       }
-
       setUser(user);
     })
-  }, [])
+  }, []);
 
   const [userItems, setUserItems] = useState({
     itemsData: [],
@@ -78,7 +73,6 @@ function App() {
     });
   }
 
-
   useEffect(() => {
     
       getAllItems()
@@ -90,6 +84,7 @@ function App() {
   //const URL ="https://selldecor-backend.herokuapp.com/item";
 
   const getUserData = async () => {
+    
     //const response = await fetch(URL +"?category=party" );
     if (!user) return;
     const token = await user.getIdToken();
