@@ -1,3 +1,4 @@
+import Table from "react-bootstrap/Table";
 import CreateForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
 
@@ -14,7 +15,7 @@ function ItemsToSell(props) {
 
             <h1 className="indexHdr">Items to Sell</h1>
             <div className="areaTable">
-                <table className="itemTable">
+                <Table  hover className="itemTable">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -45,7 +46,7 @@ function ItemsToSell(props) {
                             )
                         })}
                     </tbody>
-                </table>
+                </Table>
             </div>
         </div>
         )

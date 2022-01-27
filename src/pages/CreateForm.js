@@ -1,3 +1,4 @@
+import "./Form.scss";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
 import {useState} from "react";
@@ -38,9 +39,9 @@ const handleSubmit = (evt) => {
         <section>
             
             <Form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" className="formLabels" >
                 <Form.Label>Name</Form.Label>
-                <Form.Control
+                <Form.Control size="sm"
                     type="text"
                     value={newForm.name}
                     name="name"
@@ -48,9 +49,9 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3">
-                <Form.Label>Category</Form.Label>
-                <Form.Control 
+                <Form.Group className="mb-3" className="formLabels" >
+                <Form.Label >Category</Form.Label>
+                <Form.Control size="sm"
                     type="text"
                     value={newForm.category}
                     name="category"
@@ -58,9 +59,9 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" className="formLabels" >
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control
+                <Form.Control size="sm"
                     type="text"
                     value={newForm.img}
                     name="img"
@@ -68,9 +69,9 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" className="formLabels" >
                 <Form.Label>Price</Form.Label>
-                 <Form.Control
+                 <Form.Control size="sm"
                     type="number"
                     value={newForm.price}
                     name="price"
@@ -78,7 +79,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Control  variant="outline-primary" type="submit" value="Create Item" />
+                <Form.Control className="submitBtn" style={{marginTop: "1rem"}} variant="outline-primary" type="submit" value="Create Item" />
             </Form>
      
         </section>
