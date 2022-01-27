@@ -73,6 +73,7 @@ function App() {
     console.log('data', data)
     setItems({...items,
       allItems: data,
+      value: true,
       
     });
   }

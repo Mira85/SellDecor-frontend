@@ -3,57 +3,44 @@ import { Link } from "react-router-dom";
 function Collection(props) {
     console.log('collection', props)
 
-    return <div>
+    const loaded = () => {
+        return <div>
 
         <h1 className="indexHdr">Items to Sell</h1>
-        <div className="areaTable">
-            <table className="itemTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div className="itemArea">
+            <div className="eachitem">
+
+          
                     {props.categoryItems.map((item) => {
                         const { name, category, img, price } = item;
                         console.log('collection img url',img)
                         return (
-
-                            <tr key={item._id} className="tb-row">
-
-                                <td>{name}</td>
-                                <td>{category}</td>
-                                <td><img src={`process.env.PUBLIC_URL${img}`} alt={name} style={{
-                    height: "3.125rem",
-                    width: "3.125rem",}}/></td>
-                                <td>{price}</td>
-                                <td><button onClick={() => props.handleAddToCart(item)}>Add to cart</button><button onClick={() => props.handleAddFavorite(item)}>favorite</button></td>
-                            </tr>
+                            <div key={item._id}>
+                                <h2>{name}</h2>
+                                <img src={img} alt={name} style={{
+                    height: "16.125rem",
+                    width: "16.125rem",}}/>
+                                <div>{price}</div>
+                                <div>
+                                    <button onClick={() => props.handleAddToCart(item)}>Add to cart</button>
+                                    <button onClick={() => props.handleAddFavorite(item)}>favorite</button>
+                                    </div>
+                                    </div>
                         )
                     })}
-                </tbody>
-            </table>
-        </div>
+                  
+                    </div>
+               </div>
     </div>
-    /*  //loaded function
-     const loaded = () => {
-         return props.itemsArr.items.map((item) => (
-             <div key={item._id} className="item">
-                 <Link to={`/item/${item._id}`}>
-                     <h1>{item.name}</h1>
-                 </Link>
-                 <img src={item.image} alt={item.name} />
-             </div>
-         ))
-     }
-     const loading = () => {
-         return <h1>Loading...</h1>
-     }
- 
-     return props.itemsArr.items ? loaded() : loading() */
+
+    };
+
+    const loading = () => {
+        return <h1>Loading...</h1>
+    };
+
+    return props.categoryItems ? loaded() : loading();
+
 }
 
 
