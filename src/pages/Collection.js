@@ -1,3 +1,4 @@
+import{MdOutlineFavoriteBorder} from "react-icons/md";
 import "./Collection.scss";
 
 function Collection(props) {
@@ -15,14 +16,18 @@ function Collection(props) {
                         return (
                             <div key={item._id} className="eachItem">
                                 <h2 className="itemHdr">{name}</h2>
+                                <div className="imgContainer">
                                 <img src={img} alt={name} style={{
                                     height: "16.125rem",
                                     width: "16.125rem",
                                 }} />
+                                <MdOutlineFavoriteBorder onClick={() => props.handleAddFavorite(item)} className="FaHeart"/>
+                                </div>
+                                
                                 <div>{price}</div>
                                 <div>
                                     <button onClick={() => props.handleAddToCart(item)}>Add to cart</button>
-                                    <button onClick={() => props.handleAddFavorite(item)}>favorite</button>
+                                    
                                 </div>
                             </div>
                         )

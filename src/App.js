@@ -187,10 +187,13 @@ const handleAddFavorite = async (favoriteItem) => {
       "Authorization": "Bearer " + token
     },
     body: JSON.stringify(favoriteItem),
+
+   
   });
 
+  getUserData();
 
-  const response = await fetch(URL_user + "userinfo", {
+  /* const response = await fetch(URL_user + "userinfo", {
     method: "GET",
     headers: {
       "Authorization": "Bearer " + token
@@ -199,10 +202,10 @@ const handleAddFavorite = async (favoriteItem) => {
 
   const data = await response.json();
 
-  setItems({
+  setUserItems({
     ...items,
     favorites: data.favorites,
-  });
+  }); */
 }
 
 

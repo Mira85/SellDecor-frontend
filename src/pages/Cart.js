@@ -7,7 +7,10 @@ function Cart(props) {
         {props.cartData.map((item) => (
             <div key={item._id} className="cartItem">
                 <h1>{item.name}</h1>
-                <img src={item.image} alt={item.name} />
+                <img src={item.img} alt={item.name} style={{
+                                    height: "16.125rem",
+                                    width: "16.125rem",
+                                }}/>
                 <div>{item.price}</div>
 
             </div>
