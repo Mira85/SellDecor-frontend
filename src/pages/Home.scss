@@ -1,0 +1,31 @@
+.homeContainer{
+    display:flex;
+    justify-content: center;
+
+}
+
+.homeBckGround {
+    background-size: cover;
+    background-repeat: no-repeat;
+   height: 45rem ;
+   width: 81.25rem;
+   background-position: center;
+ 
+}
+
+.homeBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:45rem;
+    width:30rem;
+    background-color:#CCAD5CCC; 
+    color: white;
+    
+}
+
+.homeText {
+    height:40rem;
+    width:25rem;
+    border:solid white;
+}

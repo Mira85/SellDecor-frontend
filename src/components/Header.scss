@@ -25,7 +25,7 @@ nav {
     @include black-text-white-bg;
     display: flex;
     justify-content: flex-end;
-    gap: 28rem;
+    gap: 40rem;
     
 
     div{
@@ -53,7 +53,6 @@ nav {
     
 
     button  {
-        
         margin: 10px;
         font-size: large;
         border: none;
