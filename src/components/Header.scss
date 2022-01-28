@@ -24,6 +24,14 @@ nav {
 .mainNav{
     @include black-text-white-bg;
     display: flex;
+    justify-content: flex-end;
+    gap: 28rem;
+    
+
+    div{
+        display:flex;
+        color: #666666;
+    }
 
     a {
         @include black-text-white-bg;
@@ -34,14 +42,30 @@ nav {
         }
 
 }}
-.subNav{
-    @include white-text-black-bg;
-    display: flex;
 
-    button {
+
+
+
+.subNav{
+    @include black-text-white-bg;
+    display: flex;
+    justify-content: space-evenly ;
+    
+
+    button  {
+        
         margin: 10px;
         font-size: large;
         border: none;
-        @include white-text-black-bg;
+        font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 10px, 0;
+   @include black-text-white-bg;
       }
+
+    a :hover {
+        color: #CCAD5CCC;;
+
+    }
 }
