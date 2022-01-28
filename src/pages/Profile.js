@@ -15,6 +15,7 @@ function Profile(props) {
                 }}
 
                     src={props.user.photoURL} alt={props.user.displayName} /> : <h1>no image </h1>} 
+                    
                 
                 </div>
                 <div className="itemsToSell">

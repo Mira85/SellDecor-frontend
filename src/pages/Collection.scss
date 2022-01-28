@@ -30,6 +30,7 @@
 
         .itemName {
             display:flex;
+            text-transform: capitalize;
             
 
         }
@@ -62,6 +63,7 @@
         right:0;
         width:35px;
         height: 35px;   
+        color:#CCAD5CCC;
     }
     .GiShoppingCart{
         position: absolute;
@@ -75,4 +77,19 @@
 
 
 
+}
+
+.FaHeart{
+    position: absolute;
+    top:0;
+    right:0;
+    width:35px;
+    height: 35px;   
+    color: #CCAD5CCC;
+}
+
+.cartBtn {
+    color: white;
+    background-color: #CCAD5CCC;
+    border: none;
 }
