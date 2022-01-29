@@ -7,10 +7,8 @@ function Header(props) {
 
     return (
         <nav className="nav">
-            <div className="mainNav">
-                <div className="appName"><h1>SellDecor</h1>
-                </div>
-                <div className="navBtns">
+            <div className="loginArea">
+          
                     <Link to="/">
                         <div>Home</div>
                     </Link>
@@ -25,6 +23,12 @@ function Header(props) {
                             <button onClick={login}>Login</button>
                     }
                 </div>
+
+                
+            
+                <div className="appName"><h1>SellDecor</h1>
+                
+               
 
             </div>
             <div className="subNav">
