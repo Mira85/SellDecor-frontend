@@ -8,13 +8,16 @@
 .profilebox{
     display: flex;
     flex-direction: column;
+    border:solid green;
 }
 .profileDetails{
     display:flex;
     width: 30%;
+    border: solid blue;
 }
 .profileName{
     display:flex;
+    border: solid red;
 }
 
 .itemsToSell {

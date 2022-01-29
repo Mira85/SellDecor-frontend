@@ -1,14 +1,19 @@
 import { auth } from "./services/firebase";
 import './App.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 //Import components
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
-  const URL_item = "http://localhost:3001/item/";
-  const URL_user = "http://localhost:3001/user/";
+  //const URL_item = "http://localhost:3001/item/";
+  const URL_user = "https://selldecor-backend.herokuapp.com/user/";
+
+  const URL_item = "https://selldecor-backend.herokuapp.com/item/";
+  
+  const getAllItemsRef = useRef();
+  const getUserDataRef = useRef();
 
   const [user, setUser] = useState(null);
   useEffect(() => {
@@ -74,8 +79,12 @@ function App() {
   }
 
   useEffect(() => {
+    getAllItemsRef.current = getAllItems;
+  })
+
+  useEffect(() => {
     
-      getAllItems()
+    getAllItemsRef.current();
     
   }, []);
 
@@ -223,8 +232,13 @@ const handleDeleteFavorite = async (item) => {
 
 
 useEffect(() => {
+  getUserDataRef.current = getUserData;
+})
+
+
+useEffect(() => {
   if (user) {
-    getUserData()
+    getUserDataRef.current();
   }
 }, [user]);
 

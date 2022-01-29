@@ -1,9 +1,9 @@
-import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
-import { GiShoppingCart } from "react-icons/gi";
+
+
 import { MdFavorite } from "react-icons/md";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+
 
 import "./Collection.scss";
 
@@ -17,7 +17,7 @@ function Collection(props) {
             <div className="itemArea">
 
                 {props.categoryItems.map((item) => {
-                    const { name, category, img, price } = item;
+                    const { name, img, price } = item;
                     console.log('collection img url', img)
                     return (
                         <div key={item._id} className="eachItem">

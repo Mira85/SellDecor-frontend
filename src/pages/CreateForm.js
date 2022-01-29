@@ -1,6 +1,5 @@
 import "./Form.scss";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button"
 import {useState} from "react";
 
 function CreateForm (props) {
@@ -39,7 +38,7 @@ const handleSubmit = (evt) => {
         <section>
             <h1 className="indexHdr">Items to Sell</h1>
             <Form style={{marginTop: "1rem"}} onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" className="formLabels" >
+            <Form.Group className={["mb-3", "formLabels"]} >
                 <Form.Label>Name</Form.Label>
                 <Form.Control size="sm"
                     type="text"
@@ -49,7 +48,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3" className="formLabels" >
+                <Form.Group className={["mb-3", "formLabels"]} >
                 <Form.Label >Category</Form.Label>
                 <Form.Control size="sm"
                     type="text"
@@ -59,7 +58,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3" className="formLabels" >
+                <Form.Group className={["mb-3", "formLabels"]} >
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control size="sm"
                     type="text"
@@ -69,7 +68,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Group className="mb-3" className="formLabels" >
+                <Form.Group className={["mb-3", "formLabels"]} >
                 <Form.Label>Price</Form.Label>
                  <Form.Control size="sm"
                     type="number"
