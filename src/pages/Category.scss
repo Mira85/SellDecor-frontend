@@ -1,13 +1,15 @@
 .collectionContainer {
     display: flex;
-    width: 100%;
-    height: 100vh;
+    justify-content: center;
+    width: 95%;
+    height: 80vh;
     gap: 5rem;
 }
 .collection{
     display: flex;
     width:70%;
     border: solid #CCAD5CCC;
+    margin-left:5rem;
 }
 .cart {
     display: flex;

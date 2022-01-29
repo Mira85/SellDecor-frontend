@@ -35,7 +35,7 @@ function Collection(props) {
                                
                                     <div className="cardBody">
                                     <Card.Text>
-                                        <div>${price}</div>
+                                        <div className="cardPrice">${price}</div>
                                         <button onClick={() => props.handleAddToCart(item)}   className="cartBtn">Add to Cart</button>
                                     </Card.Text>
                                     </div>

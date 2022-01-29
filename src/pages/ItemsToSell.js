@@ -13,7 +13,6 @@ function ItemsToSell(props) {
         return (
         <div>
 
-            <h1 className="indexHdr">Items to Sell</h1>
             <div className="areaTable">
                 <Table  hover className="itemTable">
                     <thead>

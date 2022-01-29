@@ -37,8 +37,8 @@ const handleSubmit = (evt) => {
 
     return (
         <section>
-            
-            <Form style={{marginTop: "5rem"}} onSubmit={handleSubmit}>
+            <h1 className="indexHdr">Items to Sell</h1>
+            <Form style={{marginTop: "1rem"}} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" className="formLabels" >
                 <Form.Label>Name</Form.Label>
                 <Form.Control size="sm"

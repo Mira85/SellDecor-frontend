@@ -1,12 +1,22 @@
 .profileContainer {
     display:flex;
     flex-direction: horizontal ;
+    gap: 10rem;
 
+}
+
+.profilebox{
+    display: flex;
+    flex-direction: column;
 }
 .profileDetails{
     display:flex;
     width: 30%;
 }
+.profileName{
+    display:flex;
+}
+
 .itemsToSell {
     display:flex;
     width: 30%;

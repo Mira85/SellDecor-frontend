@@ -1,15 +1,17 @@
+import "./Cart.scss";
+
 function Cart(props) {
     console.log('cartprops', props)
     return (
         <div>
-            <h1>Cart</h1>
+            <h1 className="cartHdr">Cart</h1>
         
         {props.cartData.map((item) => (
             <div key={item._id} className="cartItem">
-                <h1>{item.name}</h1>
+                <h3 className="cartItem">{item.name}</h3>
                 <img src={item.img} alt={item.name} style={{
-                                    height: "16.125rem",
-                                    width: "16.125rem",
+                                    height: "6.125rem",
+                                    width: "6.125rem",
                                 }}/>
                 <div>{item.price}</div>
 
