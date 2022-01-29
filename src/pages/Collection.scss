@@ -92,4 +92,36 @@
     color: white;
     background-color: #CCAD5CCC;
     border: none;
+    font-size: 0.8em;
+    padding: 2px;
+}
+
+.card {
+    display: flex;
+    direction: column;
+    border: solid yellow;
+    width:200px;
+
+}
+
+.cardTitle {
+    display:flex;
+
+    border: solid green;
+    height: 50px;
+}
+
+.cardBody {
+    display:flex;
+        border: solid red;
+        direction: column;
+
+}
+.cardPrice{
+    display:flex;
+
+}
+.cartBtn {
+    display:flex;
+
 }

@@ -21,36 +21,27 @@ function Collection(props) {
                     console.log('collection img url', img)
                     return (
                         <div key={item._id} className="eachItem">
-                            <Card style={{ width: "18rem" }}>
-
+                            <Card style={{ width: "16rem" }}>
                                 <Card.Img variant="top" src={img} style={{
-                                    height: "18rem",
-                                    width: "18rem",
+                                    height: "16rem",
+                                    width: "16rem",
                                 }} className="image" />
                                 <MdFavorite onClick={() => props.handleAddFavorite(item)} className="FaHeart" />
-
-                                <Card.Body>
-                                    <Card.Title className="itemName">{name}</Card.Title>
+                                <Card.Body >
+                                    <div className="card">
+                                        <div className="cardTitle">
+                                       <Card.Title className="itemName">{name}</Card.Title>
+                                       </div>
+                               
+                                    <div className="cardBody">
                                     <Card.Text>
                                         <div>${price}</div>
+                                        <button onClick={() => props.handleAddToCart(item)}   className="cartBtn">Add to Cart</button>
                                     </Card.Text>
-                                    <Button onClick={() => props.handleAddToCart(item)}   className="cartBtn">Add to Cart</Button>
+                                    </div>
+                                    </div>
                                 </Card.Body>
                             </Card>
-
-
-
-                            {/*                             <div className="imgContainer">
-                                <img src={img} alt={name} style={{
-                                    height: "16.125rem",
-                                    width: "16.125rem",
-                                }} />
-                                <MdOutlineFavoriteBorder onClick={() => props.handleAddFavorite(item)} className="FaHeart" />
-                                <MdOutlineShoppingCart onClick={() => props.handleAddToCart(item)} className="GiShoppingCart" />
-                            </div>
-                            <div className="itemName">{name}</div>
-                            <div>{price}</div> */}
-
                         </div>
                     )
                 })}
