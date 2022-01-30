@@ -26,7 +26,7 @@ function Header(props) {
 
                 
             
-                <div className="appName"><h1>SellDecor</h1>
+                <div className="appName"><div>SellDecor</div>
                 
                
 

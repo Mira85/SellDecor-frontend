@@ -1,5 +1,5 @@
 import { MdFavorite } from "react-icons/md";
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import "bootstrap-icons/font/bootstrap-icons.css";
 import Card from "react-bootstrap/Card";
 
 
@@ -11,17 +11,17 @@ function Collection(props) {
     const loaded = () => {
         return <div className="collectionArea">
 
-            <h1 className="indexHdr">Items to Sell</h1>
+           
             <div className="itemArea">
 
                 {props.categoryItems.map((item) => {
                     const { name, img, price } = item;
                     console.log('collection img url', img)
                     return (
-                        <div key={item._id} className="eachItem">
-                            <Card style={{ width: "16rem" }}>
+                       // <div  className="eachItem">
+                            <Card key={item._id} style={{ width: "16rem" }}>
                                 <Card.Img variant="top" src={img} style={{
-                                    height: "16rem",
+                                    height: "19rem",
                                     width: "16rem",
                                 }} className="image" />
                                 <MdFavorite onClick={() => props.handleAddFavorite(item)} className="FaHeart" />
@@ -39,7 +39,7 @@ function Collection(props) {
                                     
                                 </Card.Body>
                             </Card>
-                        </div>
+                       // </div>
                     )
                 })}
 

@@ -1,23 +1,32 @@
 import "./Cart.scss";
+import Card from "react-bootstrap/Card";
 
 function Cart(props) {
     console.log('cartprops', props)
     return (
         <div>
-            <h1 className="cartHdr">Cart</h1>
-        
-        {props.cartData.map((item) => (
-            <div key={item._id} className="cartItem">
-                <h3 className="cartItem">{item.name}</h3>
-                <img src={item.img} alt={item.name} style={{
+            <Card style={{ minWidth: "25rem", height: "70vh" }} className="cartCard">
+                <Card.Body>
+
+                    <Card.Title className="cartHdr">Cart</Card.Title>
+                    <Card.Text className="cartText">
+                        {props.cartData.map((item) => (
+                            <div key={item._id} className="cartItem">
+
+                                <img src={item.img} alt={item.name} style={{
                                     height: "6.125rem",
                                     width: "6.125rem",
-                                }}/>
-                <div>{item.price}</div>
+                                }} />
 
-            </div>
-            )
-            )}
+                                <div className="cartItem">{item.name}</div>
+                                <div>${item.price}</div>
+
+                            </div>
+                        )
+                        )}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </div>
     )
 }
