@@ -14,11 +14,21 @@
     text-transform: capitalize;
     border-color:  #CCAD5CCC;
     margin-top: 3rem;
-    height: 70vh;
+    height: 100vh;
 
 }
 .cartText {
     display:flex;
     flex-direction: column;
     gap: 3rem;
+    height: 90%;
+}
+
+.cartTotal {
+    display: flex;
+    background-color: #CCAD5CCC;
+    color: white;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 0.5rem;
 }

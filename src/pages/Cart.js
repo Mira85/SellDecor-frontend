@@ -1,6 +1,12 @@
 import "./Cart.scss";
 import Card from "react-bootstrap/Card";
 
+function sum (input) {
+    let sum =0;
+    input.map((obj) => sum+= obj.price);
+    return sum;
+};
+
 function Cart(props) {
     console.log('cartprops', props)
     return (
@@ -20,11 +26,17 @@ function Cart(props) {
 
                                 <div className="cartItem">{item.name}</div>
                                 <div>${item.price}</div>
-
                             </div>
                         )
                         )}
+                        
                     </Card.Text>
+                    <div className="cartTotal">
+                        <div>Items in cart: {props.cartData.length}
+                                </div>
+                        <div>Total: {sum(props.cartData)}
+                                </div>
+                                </div>
                 </Card.Body>
             </Card>
         </div>
