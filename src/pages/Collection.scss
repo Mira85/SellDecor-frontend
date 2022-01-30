@@ -88,40 +88,33 @@
     color: #CCAD5CCC;
 }
 
-.cartBtn {
+.cardBody {
+    display:flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    padding: 0.5rem;
+
+}
+.cardTitle{
+    font-size: 1rem;
+}
+
+.cardText {
+    display:flex;
+    justify-content: space-between;
+
+}
+.addCartBtn {
+    display: flex;
+    font-weight: bold;
     color: white;
     background-color: #CCAD5CCC;
     border: none;
     font-size: 0.8em;
-    padding: 2px;
+    padding: 0.5rem;;
 }
 
-.card {
-    display: flex;
-    direction: column;
-    border: solid yellow;
-    width:200px;
-
-}
-
-.cardTitle {
-    display:flex;
-
-    border: solid green;
-    height: 50px;
-}
-
-.cardBody {
-    display:flex;
-        border: solid red;
-        direction: column;
-
-}
-.cardPrice{
-    display:flex;
-
-}
-.cartBtn {
-    display:flex;
-
+.cardPrice {
+    color: #CCAD5CCC;
+    font-weight: bold;
 }

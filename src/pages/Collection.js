@@ -1,5 +1,3 @@
-
-
 import { MdFavorite } from "react-icons/md";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Card from "react-bootstrap/Card";
@@ -27,19 +25,18 @@ function Collection(props) {
                                     width: "16rem",
                                 }} className="image" />
                                 <MdFavorite onClick={() => props.handleAddFavorite(item)} className="FaHeart" />
-                                <Card.Body >
-                                    <div className="card">
-                                        <div className="cardTitle">
-                                       <Card.Title className="itemName">{name}</Card.Title>
-                                       </div>
+                                <Card.Body  className="cardBody">
+                                        
+                                      <Card.Title className="cardTitle">{name}</Card.Title>
+                                       
                                
-                                    <div className="cardBody">
-                                    <Card.Text>
+                                    
+                                    <Card.Text className="cardText">
                                         <div className="cardPrice">${price}</div>
-                                        <button onClick={() => props.handleAddToCart(item)}   className="cartBtn">Add to Cart</button>
+                                        <button onClick={() => props.handleAddToCart(item)}   className="addCartBtn" >Add to Cart</button>
                                     </Card.Text>
-                                    </div>
-                                    </div>
+                                
+                                    
                                 </Card.Body>
                             </Card>
                         </div>
