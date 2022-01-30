@@ -34,7 +34,7 @@ function Cart(props) {
                     <div className="cartTotal">
                         <div>Items in cart: {props.cartData.length}
                                 </div>
-                        <div>Total: {sum(props.cartData)}
+                        <div>Total: ${sum(props.cartData)}
                                 </div>
                                 </div>
                 </Card.Body>

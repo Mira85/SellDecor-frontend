@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import { MdSell } from "react-icons/md";
 
 function App() {
   //const URL_item = "http://localhost:3001/item/";
@@ -50,7 +51,8 @@ function App() {
 
   const [userItems, setUserItems] = useState({
     itemsData: [],
-    favorites: []
+    favorites: [],
+    profileSec: true
 
   })
 
@@ -229,6 +231,12 @@ const handleDeleteFavorite = async (item) => {
   getUserData();
 }
 
+const handleFavoriteSec = (boolean) => {
+  const favoriteSec = { ...userItems, profileSec: boolean };
+  setUserItems(favoriteSec);
+
+};
+
 
 
 useEffect(() => {
@@ -256,6 +264,7 @@ return (
       handleAddToCart={handleAddToCart}
       handleAddFavorite={handleAddFavorite}
       handleDeleteFavorite={handleDeleteFavorite}
+      handleFavoriteSec={handleFavoriteSec}
       user={user} />
     <Footer />
 
