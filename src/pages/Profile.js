@@ -19,7 +19,7 @@ function Profile(props) {
 
                     <div className="profileName">{props.user.displayName}</div>
 <ul className="leftNav">
-                  <li>  <button onClick={() => props.handleFavoriteSec(true)} className="profileNavBtn">Items To Sell</button></li>
+                  <li>  <button onClick={() => props.handleFavoriteSec(true)} className="profileNavBtn">My Decor</button></li>
                    <li> <button onClick={() => props.handleFavoriteSec(false)} className="profileNavBtn">Favorites</button></li>
              </ul>   
             </div>

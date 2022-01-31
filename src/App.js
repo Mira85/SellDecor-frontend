@@ -5,7 +5,6 @@ import { useEffect, useState, useRef } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { MdSell } from "react-icons/md";
 
 function App() {
   //const URL_item = "http://localhost:3001/item/";
