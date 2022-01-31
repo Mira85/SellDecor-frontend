@@ -6,8 +6,8 @@ function Profile(props) {
     console.log('profileprops', props)
     return (
         <div className="profileContainer">
-            <div className="profilebox">
-                <div className="profileDetails">
+            <div className="profileBoxOne">
+              
                     {props.user ? <img style={{
                         height: "13.125rem",
                         width: "13.125rem",
@@ -17,12 +17,12 @@ function Profile(props) {
                         src={props.user.photoURL} alt={props.user.displayName} /> : <h1>no image </h1>}
 
                     <div className="profileName">{props.user.displayName}</div>
-
-                    <button onClick={() => props.handleFavoriteSec(true)}>Items To Sell</button>
-                    <button onClick={() => props.handleFavoriteSec(false)}>Favorites</button>
-                </div>
+<ul className="leftNav">
+                  <li>  <button onClick={() => props.handleFavoriteSec(true)} className="profileNavBtn">Items To Sell</button></li>
+                   <li> <button onClick={() => props.handleFavoriteSec(false)} className="profileNavBtn">Favorites</button></li>
+             </ul>   
             </div>
-            <div className="itemsToSell">
+            <div className="profileBoxTwo">
                 {props.profileSec ? <ItemsToSell {...props} /> : <Favorites {...props} />}
 
             </div>

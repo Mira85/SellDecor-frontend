@@ -1,3 +1,4 @@
+import "./ItemsToSell.scss";
 import Table from "react-bootstrap/Table";
 import CreateForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
@@ -38,8 +39,8 @@ function ItemsToSell(props) {
                     width: "3.125rem"}} /></td>
                                     <td>{price}</td>
                                     <td>
-                                        <button onClick={() => props.handleUpdate(item)}>Update</button>
-                                        <button onClick={() => handleClick(item)}>Delete</button>
+                                        <button onClick={() => props.handleUpdate(item)} className="updateDeleteBtn">Update</button>
+                                        <button onClick={() => handleClick(item)} className="updateDeleteBtn">Delete</button>
                                     </td>
                                 </tr>
                             )
@@ -56,9 +57,9 @@ function ItemsToSell(props) {
         return <h1>Loading ...</h1>
     }
     return (
-        <section>
-            {props.value ? <CreateForm {...props} /> : <UpdateForm {...props} />}
-            {props.itemsData ? loaded() : loading()}
+        <section className="profileSection">
+           <div> {props.value ? <CreateForm {...props} /> : <UpdateForm {...props} />}</div>
+           <div>{props.itemsData ? loaded() : loading()} </div>
         </section>
     )
 }
