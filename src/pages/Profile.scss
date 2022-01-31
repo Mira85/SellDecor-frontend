@@ -1,31 +1,43 @@
 .profileContainer {
     display:flex;
-    flex-direction: horizontal ;
-    gap: 10rem;
-    justify-content: space-around;
-    min-width: 75rem; 
+    justify-content: center;
+    //align-items:center;
+   // border: solid yellow;
+    height: 100vh;
+  
+
+}
+
+.profileSection{
+    display: flex;
+    gap: 5rem;
+    //justify-content: space-evenly;
+    width: 94%; 
+    height: 70%;
+   // border: solid blue;
+    margin-top: 2rem;
 
 }
 
 .profileBoxOne{
     display: flex;
     flex-direction: column;
-    border:solid green;
-    width: 30%;
+    //border:solid green;
+    width: 15%;
 }
 
 .profileBoxTwo{
     display: flex;
-    flex-direction: column;
-    border:solid green;
+   // flex-direction: row;
+   // border:solid green;
     width:70%;
 }
 
 .profileName{
     display:flex;
-    border: solid red;
     font-weight: bold;
     padding:1rem;
+    font-size:larger;
 }
 
 .leftNav{
@@ -48,11 +60,11 @@
     color:#CCAD5CCC;
 }
 
-.itemsToSell {
+/* .itemsToSell {
     display:flex;
     width: 30%;
 }
 .favorites{
     display:flex;
     width: 30%;
-}
+} */

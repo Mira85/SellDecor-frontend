@@ -13,8 +13,23 @@
 
 }
 
-.profileSection{
+ .profileArea{
     display:flex;
     gap: 5rem;
+    //justify-content: space-around;
+    flex-flow: row wrap;
+    //align-items: stretch;
+    width: 100%;
 
+}  
+
+.profileFormSection{
+   //width:50%;
+   flex-grow: 1;
+}
+
+.profileTableSection{
+  // width:50%;
+  flex-grow: 1;
+  text-transform: capitalize;
 }

@@ -1,20 +1,19 @@
 import "./Cart.scss";
 import Card from "react-bootstrap/Card";
 
-function sum (input) {
-    let sum =0;
-    input.map((obj) => sum+= obj.price);
+function sum(input) {
+    let sum = 0;
+    input.map((obj) => sum += obj.price);
     return sum;
 };
 
 function Cart(props) {
     console.log('cartprops', props)
     return (
-        <div>
-            <Card style={{ minWidth: "25rem", height: "70vh" }} className="cartCard">
+        <div className="cartArea">
+            <Card className="cartCard">
+                <Card.Header className="cartHdr">Cart</Card.Header>
                 <Card.Body>
-
-                    <Card.Title className="cartHdr">Cart</Card.Title>
                     <Card.Text className="cartText">
                         {props.cartData.map((item) => (
                             <div key={item._id} className="cartItem">
@@ -29,15 +28,17 @@ function Cart(props) {
                             </div>
                         )
                         )}
-                        
+
                     </Card.Text>
-                    <div className="cartTotal">
-                        <div>Items in cart: {props.cartData.length}
-                                </div>
-                        <div>Total: ${sum(props.cartData)}
-                                </div>
-                                </div>
+
                 </Card.Body>
+                <Card.Footer className="cartTotal">
+                    <div>Items in cart: {props.cartData.length}
+                    </div>
+                    <div>Total: ${sum(props.cartData)}
+                    </div>
+                </Card.Footer>
+
             </Card>
         </div>
     )

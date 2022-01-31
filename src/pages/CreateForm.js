@@ -36,7 +36,6 @@ const handleSubmit = (evt) => {
 
     return (
         <section>
-            <h1 className="indexHdr">Items to Sell</h1>
             <Form style={{marginTop: "1rem"}} onSubmit={handleSubmit}>
             <Form.Group className={["mb-3", "formLabels"]} >
                 <Form.Label>Name</Form.Label>
@@ -78,7 +77,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group>
-                <Form.Control className="submitBtn" style={{marginTop: "1rem"}} variant="outline-primary" type="submit" value="Create Item" />
+                <Form.Control className="submitBtn" style={{marginTop: "1rem"}} variant="outline-primary" type="submit" value="Add Item" />
             </Form>
      
         </section>

@@ -23,7 +23,7 @@ function ItemsToSell(props) {
                             <th>Category</th>
                             <th>Image</th>
                             <th>Price</th>
-                            <th>Settings</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,9 +60,9 @@ function ItemsToSell(props) {
         return <h1>Loading ...</h1>
     }
     return (
-        <section className="profileSection">
-           <div> {props.value ? <CreateForm {...props} /> : <UpdateForm {...props} />}</div>
-           <div>{props.itemsData ? loaded() : loading()} </div>
+        <section className="profileArea">
+           <div className="profileFormSection"> {props.value ? <CreateForm {...props} /> : <UpdateForm {...props} />}</div>
+           <div className="profileTableSection">{props.itemsData ? loaded() : loading()} </div>
         </section>
     )
 }

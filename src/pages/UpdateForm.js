@@ -77,7 +77,7 @@ const handleSubmit = (evt) => {
                     onChange={handleChange}
                 />
                 </Form.Group> 
-                <Form.Control style={{marginTop: "1rem"}} type="submit" value="Update Item" />
+                <Form.Control className="submitBtn" style={{marginTop: "1rem"}} type="submit" value="Update Item" />
             </Form>
      
         </section>

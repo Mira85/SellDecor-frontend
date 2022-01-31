@@ -12,17 +12,17 @@ function Collection(props) {
         return <div className="collectionArea">
 
            
-            <div className="itemArea">
+            
 
                 {props.categoryItems.map((item) => {
                     const { name, img, price } = item;
                     console.log('collection img url', img)
                     return (
                        // <div  className="eachItem">
-                            <Card key={item._id} style={{ width: "16rem" }}>
+                            <Card className="eachCard" key={item._id} style={{ width: "12.5rem" }}>
                                 <Card.Img variant="top" src={img} style={{
-                                    height: "19rem",
-                                    width: "16rem",
+                                    height: "15.5rem",
+                                    width: "12.4rem",
                                 }} className="image" />
                                 <MdFavorite onClick={() => props.handleAddFavorite(item)} className="FaHeart" />
                                 <Card.Body  className="cardBody">
@@ -45,7 +45,7 @@ function Collection(props) {
 
 
             </div>
-        </div>
+        
 
     };
 
