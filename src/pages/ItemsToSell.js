@@ -1,3 +1,4 @@
+import { RiDeleteBin6Line, RiEditLine } from "react-icons/ri";
 import "./ItemsToSell.scss";
 import Table from "react-bootstrap/Table";
 import CreateForm from "./CreateForm";
@@ -37,10 +38,12 @@ function ItemsToSell(props) {
                                     <td><img src={img} alt={name} style={{
                     height: "3.125rem",
                     width: "3.125rem"}} /></td>
-                                    <td>{price}</td>
+                                    <td>${price}</td>
                                     <td>
-                                        <button onClick={() => props.handleUpdate(item)} className="updateDeleteBtn">Update</button>
-                                        <button onClick={() => handleClick(item)} className="updateDeleteBtn">Delete</button>
+                                        <div className="updateDeleteBtn-box">
+                                        <RiEditLine onClick={() => props.handleUpdate(item)} className="updateDeleteBtn" />
+                                        <RiDeleteBin6Line onClick={() => handleClick(item)} className="updateDeleteBtn" />
+                                        </div>
                                     </td>
                                 </tr>
                             )

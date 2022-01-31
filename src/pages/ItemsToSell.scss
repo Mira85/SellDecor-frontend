@@ -1,11 +1,16 @@
 .updateDeleteBtn{
+    color:  #CCAD5CCC;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  
+}
+
+.updateDeleteBtn-box{
     display: flex;
-    font-weight: bold;
-    color: white;
-    background-color: #CCAD5CCC;
-    border: none;
-    font-size: 0.8em;
-    padding: 0.5rem;;
+    gap:0.5rem;
+    margin-top: 0.2rem;
+
 }
 
 .profileSection{
