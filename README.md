@@ -19,13 +19,13 @@ This is MERN-stack application which uses data from SellDecor REST API hosted on
 
 ## Screenshots
 ### Home page
-![Image of Home page]()
+![Image of Home page](./screenshots/selldecor-home.png)
 
 ### Profile page
-![Image of Profile page]()
+![Image of Profile page](./screenshots/selldecor-profile.png)
 
 ### Collection page
-![Image of collection page]()
+![Image of collection page](./screenshots/selldecor-collection.png)
 
 
 ## Getting started
