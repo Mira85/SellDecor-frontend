@@ -1,25 +1,16 @@
 $maincolor: black;
 $contrastcolor: white;
 
-@mixin white-text-black-bg {
-  color: $contrastcolor;
-  background-color: $maincolor;
-}
-
 @mixin black-text-white-bg {
   color: $maincolor;
   background-color: $contrastcolor;
 }
 
 nav {
-  
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-
-  
   }
-
 
 .appName{
     display: flex;
@@ -28,41 +19,18 @@ nav {
     font-size: 4rem;
     font-weight: bold;
 }    
-/* 
-    div{
-        display:flex;
-        
-    }
-
-    a {
-        @include black-text-white-bg;
-    
-        div {
-          margin: 10px;
-          font-size: large;
-        }
-
-}} */
 
 .loginArea {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
     gap: 1rem;
-    
-
-    
+        
         a {
             display: flex;
             text-decoration: none;
             color: black;
         }
-
-       /*  a :hover {
-            color:#CCAD5CCC;
-        } */
-       
-    
 
     button{
         display: flex;
@@ -72,14 +40,7 @@ nav {
         padding: 0;
         font-size: 1rem;
     }
-
-   /*  button :hover {
-        color:#CCAD5CCC;
-    } */
 }
-
-
-
 
 .subNav{
     @include black-text-white-bg;
@@ -88,10 +49,10 @@ nav {
     
 
     button  {
-        margin: 10px;
-        font-size: large;
-        border: none;
-        font-weight: bold;
+    margin: 10px;
+    font-size: large;
+    border: none;
+    font-weight: bold;
     text-transform: uppercase;
     font-size: 15px;
     padding: 10px, 0;
@@ -100,6 +61,5 @@ nav {
 
     a :focus {
         color: #CCAD5CCC;
-
     }
 }

@@ -29,7 +29,7 @@ This is MERN-stack application which uses data from SellDecor REST API hosted on
 
 
 ## Getting started
-[Trello was used for project planning](https://trello.com/b/pzdGyjrB/selldecor)
+[Check me for project planning](https://trello.com/b/pzdGyjrB/selldecor)
 
 [Click Here](https://selldecor.netlify.app/) to see the deployed app!
 

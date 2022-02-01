@@ -1,5 +1,4 @@
 .cartArea{
-    //border: solid red;
     width: 100%;
 }
 
@@ -14,12 +13,11 @@
 }
 .cartItem{
     font-size: 1rem;
-    //border: solid red;
     height:12.6rem;
     display: flex;
     justify-content: center;
-  align-items:center;
-  position: relative;
+    align-items:center;
+    position: relative;
 }
 
 .eachCartItem{
@@ -27,10 +25,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //border: solid blue;
     width: 6.8rem;
     height:90%;
-
 }
 
 .cartDeleteBtn{
@@ -52,10 +48,7 @@
 
 }
 .cartText {
-    
     gap: 3rem;
-    //border: solid green;
-    //height: 90%;
 }
 
 .cartTotal {
@@ -64,6 +57,5 @@
     color: white;
     justify-content: space-between;
     font-weight: bold;
-    padding: 0.5rem;
-    
+    padding: 0.5rem; 
 }

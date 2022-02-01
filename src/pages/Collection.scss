@@ -1,17 +1,12 @@
 .collectionArea {
     display:flex;
-    //border: solid black;
     flex-wrap: wrap;
-    width: 100%;
-    height: 78vh;
+    width: 95%;
+    height: 70vh;
     justify-content: center;
     align-content: center;
-    //align-items: center;
-    row-gap: 2rem;
-    column-gap: 3rem;
-}
-.eachCard{
-    //border: solid green;
+    row-gap: 6em;
+    column-gap: 4rem;
 }
 
 .FaHeart{

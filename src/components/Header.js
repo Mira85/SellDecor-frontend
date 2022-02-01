@@ -8,28 +8,22 @@ function Header(props) {
     return (
         <nav className="nav">
             <div className="loginArea">
-          
-                    <Link to="/">
-                        <div>Home</div>
-                    </Link>
-                    <Link to="/profile">
-                        <div>Profile</div>
-                    </Link>
-                    {
-                        props.user ?
-                            <button onClick={logout}>Logout</button>
-                            :
 
-                            <button onClick={login}>Login</button>
-                    }
-                </div>
-
-                
-            
-                <div className="appName"><div>SellDecor</div>
-                
-               
-
+                <Link to="/">
+                    <div>Home</div>
+                </Link>
+                <Link to="/profile">
+                    <div>Profile</div>
+                </Link>
+                {
+                    props.user ?
+                        <button onClick={logout}>Logout</button>
+                        :
+                        <button onClick={login}>Login</button>
+                }
+            </div>
+            <div className="appName">
+                <div>SellDecor</div>
             </div>
             <div className="subNav">
                 <Link to="/collection">
@@ -49,8 +43,6 @@ function Header(props) {
                 </Link>
             </div>
             <hr />
-
-
         </nav>
     )
 }

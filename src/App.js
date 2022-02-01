@@ -7,9 +7,8 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
-  //const URL_item = "http://localhost:3001/item/";
+ 
   const URL_user = "https://selldecor-backend.herokuapp.com/user/";
-
   const URL_item = "https://selldecor-backend.herokuapp.com/item/";
   
   const getAllItemsRef = useRef();
@@ -22,12 +21,9 @@ function App() {
 
       if (user) {
         const token = await user.getIdToken();
-        console.log(token);
-
         const getUser = await fetch(URL_user, {
           headers: {
             "Authorization": "Bearer " + token
-
           }
         })
         const userInfo = await getUser.json();
@@ -38,7 +34,6 @@ function App() {
             headers: {
               "Content-Type": "Application/json",
               "Authorization": "Bearer " + token
-
             },
             body: JSON.stringify(user),
           });
@@ -58,24 +53,19 @@ function App() {
   const [items, setItems] = useState({
     allItems: [],
     categoryItems: [],
-    //itemsData: [],
     eachItem: [],
     cartData: [],
     value: true,
-   // favorites: []
   });
 
 
-
   const getAllItems = async () => {
- console.log('getAllitems:', 'in')
     const response = await fetch(URL_item)
     const data = await response.json();
     console.log('data', data)
     setItems({...items,
       allItems: data,
       value: true,
-      
     });
   }
 
@@ -84,21 +74,14 @@ function App() {
   })
 
   useEffect(() => {
-    
-    getAllItemsRef.current();
-    
+    getAllItemsRef.current(); 
   }, []);
 
 
-
-  //const URL ="https://selldecor-backend.herokuapp.com/item";
-
   const getUserData = async () => {
     
-    //const response = await fetch(URL +"?category=party" );
     if (!user) return;
     const token = await user.getIdToken();
-
     const response = await fetch(URL_user + "userinfo", {
       method: "GET",
       headers: {
@@ -110,7 +93,6 @@ function App() {
     setUserItems({...userItems,
       itemsData: data.itemsToSell,
       favorites: data.favorites,
-      //value: true
     });
     console.log('itemstate', items)
   }
@@ -168,14 +150,7 @@ function App() {
   }
 
   const handleClickBtn = async (category) => {
-   // const token = await user.getIdToken();
-    //const response = await fetch(URL_item + category)
- //     headers: {
-     //   "Authorization": "Bearer " + token
-  //    }
-    console.log('handleClickBtn:', items)
-  const categoryItems = items.allItems.filter(item => category ===  item.category);
-  
+    const categoryItems = items.allItems.filter(item => category ===  item.category);
     setItems({
       ...items,
       categoryItems: categoryItems,
@@ -202,20 +177,6 @@ const handleAddFavorite = async (favoriteItem) => {
   });
 
   getUserData();
-
-  /* const response = await fetch(URL_user + "userinfo", {
-    method: "GET",
-    headers: {
-      "Authorization": "Bearer " + token
-    }
-  });
-
-  const data = await response.json();
-
-  setUserItems({
-    ...items,
-    favorites: data.favorites,
-  }); */
 }
 
 
@@ -237,7 +198,6 @@ const handleFavoriteSec = (boolean) => {
 };
  const handleDeleteCartItem =(cartItem) => {
      const newCartData = items.cartData.filter(item => item.name !== cartItem.name)
-
      setItems({...items, cartData:newCartData})
  }
 
@@ -271,8 +231,6 @@ return (
       handleDeleteCartItem={handleDeleteCartItem}
       user={user} />
     <Footer />
-
-
   </div>
 );
 }
