@@ -1,6 +1,6 @@
 # SellDecor
 
-This web application is built with React. Users can buy or sell used decor items. After a occasion decor items which you dont need can be sold. You can also purchase other items at reasonable price for your special occasion.
+This web application is built with React. Users can buy or sell used/unused decor items. After a occasion decor items which you dont need can be sold. You can also purchase other items at reasonable price for your special occasion.
 
 ## Technologies Used
 
@@ -29,7 +29,7 @@ This web application is built with React. Users can buy or sell used decor items
 
 ## Getting started
 
-[Click Here]() to see the deployed app!
+[Click Here](https://selldecor.netlify.app/) to see the deployed app!
 
 ## Future Enhancements
 
