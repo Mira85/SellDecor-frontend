@@ -1,3 +1,4 @@
+import { TiDeleteOutline } from "react-icons/ti";
 import "./Cart.scss";
 import Card from "react-bootstrap/Card";
 
@@ -17,14 +18,17 @@ function Cart(props) {
                     <Card.Text className="cartText">
                         {props.cartData.map((item) => (
                             <div key={item._id} className="cartItem">
-
+                                <div className="eachCartItem">
                                 <img src={item.img} alt={item.name} style={{
                                     height: "6.125rem",
                                     width: "6.125rem",
                                 }} />
 
-                                <div className="cartItem">{item.name}</div>
+                                <div className="cartItemName">{item.name}</div>
                                 <div>${item.price}</div>
+                                </div>
+                                <TiDeleteOutline onClick={()=>props.handleDeleteCartItem(item)} className="cartDeleteBtn" />
+                                
                             </div>
                         )
                         )}

@@ -235,7 +235,11 @@ const handleFavoriteSec = (boolean) => {
   setUserItems(favoriteSec);
 
 };
+ const handleDeleteCartItem =(cartItem) => {
+     const newCartData = items.cartData.filter(item => item.name !== cartItem.name)
 
+     setItems({...items, cartData:newCartData})
+ }
 
 
 useEffect(() => {
@@ -264,6 +268,7 @@ return (
       handleAddFavorite={handleAddFavorite}
       handleDeleteFavorite={handleDeleteFavorite}
       handleFavoriteSec={handleFavoriteSec}
+      handleDeleteCartItem={handleDeleteCartItem}
       user={user} />
     <Footer />
 
