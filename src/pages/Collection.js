@@ -4,13 +4,11 @@ import Card from "react-bootstrap/Card";
 import "./Collection.scss";
 
 function Collection(props) {
-    console.log('collection', props)
 
     const loaded = () => {
         return <div className="collectionArea">
                     {props.categoryItems.map((item) => {
                         const { name, img, price } = item;
-                        console.log('collection img url', img)
                         return (
                                 <Card className="eachCard" key={item._id} style={{ width: "12.5rem" }}>
                                     <Card.Img variant="top" src={img} style={{

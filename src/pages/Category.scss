@@ -3,12 +3,14 @@
     justify-content: center;
     height: 100vh;
     gap: 2rem;
+    
 }
 .collection{
     display: flex;
     width:68%;
     margin-left:3rem;
-    overflow: scroll;
+    //overflow: scroll;
+
 }
 .cart {
     display: flex;

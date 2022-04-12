@@ -1,6 +1,8 @@
 import { login, logout } from "../services/firebase";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import { GiHamburgerMenu} from "react-icons/gi";
+
 
 function Header(props) {
 
@@ -27,19 +29,19 @@ function Header(props) {
             </div>
             <div className="subNav">
                 <Link to="/collection">
-                    <button onClick={() => props.handleClickBtn("party")}>Party</button>
+                    <button className="navLinks" onClick={() => props.handleClickBtn("party")}>Party</button>
                 </Link>
                 <Link to="/collection">
-                    <button onClick={() => props.handleClickBtn("christmas")}>Christmas</button>
+                    <button className="navLinks" onClick={() => props.handleClickBtn("christmas")}>Christmas</button>
                 </Link>
                 <Link to="/collection">
-                    <button onClick={() => props.handleClickBtn("halloween")}>Halloween</button>
+                    <button className="navLinks" onClick={() => props.handleClickBtn("halloween")}>Halloween</button>
                 </Link>
                 <Link to="/collection">
-                    <button onClick={() => props.handleClickBtn("easter")}>Easter</button>
+                    <button className="navLinks" onClick={() => props.handleClickBtn("easter")}>Easter</button>
                 </Link>
                 <Link to="/collection">
-                    <button onClick={() => props.handleClickBtn("valentines day")}>Valentines Day</button>
+                    <button className="navLinks" onClick={() => props.handleClickBtn("valentines day")}>Valentines Day</button>
                 </Link>
             </div>
             <hr />

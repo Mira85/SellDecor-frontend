@@ -62,7 +62,6 @@ function App() {
   const getAllItems = async () => {
     const response = await fetch(URL_item)
     const data = await response.json();
-    console.log('data', data)
     setItems({...items,
       allItems: data,
       value: true,
@@ -94,7 +93,7 @@ function App() {
       itemsData: data.itemsToSell,
       favorites: data.favorites,
     });
-    console.log('itemstate', items)
+   
   }
 
   const createItem = async (createdItem) => {
@@ -102,7 +101,6 @@ function App() {
     const token = await user.getIdToken();
     //conversion of price(string) to number
     createdItem.price = parseInt(createdItem.price);
-    console.log("itemtosell", createdItem.price)
     await fetch(URL_item, {
       method: "POST",
       headers: {
@@ -117,7 +115,6 @@ function App() {
 
   const updateItem = async (item) => {
     const token = await user.getIdToken();
-    console.log('updateditem', item)
     await fetch(URL_item + item._id, {
       method: "PUT",
       headers: {
@@ -144,7 +141,6 @@ function App() {
 
 
   const handleUpdate = (itm) => {
-    console.log('clicked')
     const updateItem = { ...items, eachItem: itm, value: !items.value };
     setItems(updateItem);
   }

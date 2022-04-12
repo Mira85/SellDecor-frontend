@@ -12,6 +12,9 @@ nav {
   flex-direction: column;
   }
 
+.hamburgerIcon{
+    display:none;
+}
 .appName{
     display: flex;
     justify-content: center;
@@ -62,4 +65,18 @@ nav {
     a :focus {
         color: #CCAD5CCC;
     }
+}
+
+@media only screen and (max-width: 600px){
+    nav {
+        overflow: hidden;
+        position: relative;
+        }
+
+    
+          
+    
+    
+      
+
 }

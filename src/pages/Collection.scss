@@ -1,15 +1,21 @@
 .collectionArea {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     width: 95%;
-    height: 70vh;
+    height: 40rem ;
+    //height: 70vh;
     justify-content: center;
     align-content: center;
     row-gap: 6em;
     column-gap: 4rem;
     overflow: scroll;
+    
 }
 
+.eachCard{
+    //border: solid purple;
+
+}
 .FaHeart{
     position: absolute;
     top:0;
