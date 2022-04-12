@@ -1,7 +1,7 @@
 import { login, logout } from "../services/firebase";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import { GiHamburgerMenu} from "react-icons/gi";
+
 
 
 function Header(props) {
