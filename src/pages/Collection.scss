@@ -2,43 +2,45 @@
     display: flex;
     flex-wrap: wrap;
     width: 95%;
-    height: 40rem ;
+    height: 40rem;
     //height: 70vh;
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center;
+    align-content: center;   */
     row-gap: 6em;
     column-gap: 4rem;
     overflow: scroll;
-    
-}
-
-.eachCard{
-    //border: solid purple;
 
 }
-.FaHeart{
+
+.eachCard {
+    margin: auto;
+
+}
+
+.FaHeart {
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     width: 2rem;
-    height: 2rem;   
+    height: 2rem;
     color: #CCAD5CCC;
     cursor: pointer;
 }
 
 .cardBody {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-transform: capitalize;
     padding: 0.5rem;
 }
-.cardTitle{
+
+.cardTitle {
     font-size: 1rem;
     display: flex;
 }
 
 .cardText {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
