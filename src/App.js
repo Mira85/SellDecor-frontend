@@ -27,7 +27,6 @@ function App() {
           }
         })
         const userInfo = await getUser.json();
-        console.log('userinfo', userInfo)
         if (!userInfo) {
           await fetch(URL_user, {
             method: "POST",
