@@ -2,38 +2,40 @@ $maincolor: black;
 $contrastcolor: white;
 
 @mixin black-text-white-bg {
-  color: $maincolor;
-  background-color: $contrastcolor;
+    color: $maincolor;
+    background-color: $contrastcolor;
 }
 
 nav {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  }
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
 
 
-.appName{
+.appName {
     display: flex;
     justify-content: center;
     color: #666666;
     font-size: 4rem;
     font-weight: bold;
-}    
+}
 
 .loginArea {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
     gap: 1rem;
-        
-        a {
-            display: flex;
-            text-decoration: none;
-            color: black;
-        }
 
-    button{
+    a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+    }
+
+    button {
         display: flex;
         border: none;
         background-color: white;
@@ -43,66 +45,60 @@ nav {
     }
 }
 
-.subNav{
+.subNav {
     @include black-text-white-bg;
     display: flex;
-    justify-content: space-evenly ;
-    
+    justify-content: space-evenly;
 
-    button  {
-    margin: 10px;
-    font-size: large;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 15px;
-    padding: 10px, 0;
-   @include black-text-white-bg;
-      }
+
+    button {
+        margin: 10px;
+        font-size: large;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 15px;
+        padding: 10px, 0;
+        @include black-text-white-bg;
+    }
 
     a :focus {
         color: #CCAD5CCC;
     }
 }
 
-@media only screen and (max-width: 600px){
-    nav {
-        /* overflow: hidden;
-        position: relative; */
-        
-        }
+@media only screen and (max-width: 600px) {
 
+    .subNavBrk {
+        display: show;
+    }
 
-    .appName{
+    .appName {
         font-size: 3rem;
-        width:100%;
-    }  
+        width: 100%;
+    }
 
     .loginArea {
-        gap: 0.5rem;
-        width:100%;
+        gap: 0.4rem;
+        width: 100vw;
 
         a {
-            font-size: 0.7rem; 
+            font-size: 0.7rem;
+
         }
 
-        button{
+        button {
             font-size: 0.7rem;
         }
+    }
 
-    .subNav{
-        button{
-            font-size:10px;
-            border: solid red;
-            
+    .subNav {
+        width: 100%;
+        margin: auto;
+
+        button {
+            margin: auto;
+            font-size: 10px;
         }
     }
-    }
-
-    
-          
-    
-    
-      
-
 }
