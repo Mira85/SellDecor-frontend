@@ -2,7 +2,6 @@ import { TiDeleteOutline } from "react-icons/ti";
 import "./Favorites.scss";
 
 function Favorites(props) {
-    console.log('favorte props', props)
     return (
         <div className="favoriteContainer">
             {props.favorites.map((item) => (

@@ -3,7 +3,6 @@ import Favorites from "./Favorites";
 import "./Profile.scss";
 
 function Profile(props) {
-    console.log('profileprops', props)
     return (
         <div className="profileContainer">
             <div className="profileSection">

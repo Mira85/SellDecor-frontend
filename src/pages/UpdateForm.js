@@ -4,8 +4,6 @@ import { useState } from "react";
 
 function UpdateForm(props) {
 
-    console.log("updateform props", props)
-
     //state to hold formdata
     const [editForm, setEditForm] = useState(props.eachItem);
 

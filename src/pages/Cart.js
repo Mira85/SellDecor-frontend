@@ -9,7 +9,6 @@ function sum(input) {
 };
 
 function Cart(props) {
-    console.log('cartprops', props)
     return (
         <div className="cartArea">
             <Card className="cartCard">

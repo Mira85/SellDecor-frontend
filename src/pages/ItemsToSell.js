@@ -5,7 +5,6 @@ import CreateForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
 
 function ItemsToSell(props) {
-    console.log("props.itemdata", props)
 
     const handleClick = (itm) => {
         props.deleteItem(itm._id);
