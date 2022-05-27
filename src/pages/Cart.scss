@@ -35,8 +35,9 @@
     cursor: pointer;
     color: #CCAD5CCC;
     position: absolute;
-    top: 0;
-    right: 8rem;
+    top:-10px;
+    right:75px; 
+    
   }
 
 .cartCard {
@@ -58,4 +59,14 @@
     justify-content: space-between;
     font-weight: bold;
     padding: 0.5rem; 
+}
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) {
+    .cartDeleteBtn{
+    position: absolute;
+    top:-10px;
+    right:38px; 
+  }
 }

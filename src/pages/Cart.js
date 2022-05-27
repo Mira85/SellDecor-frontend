@@ -26,8 +26,8 @@ function Cart(props) {
                                     <div>${item.price}</div>
                                 </div>
                                 <TiDeleteOutline onClick={() => props.handleDeleteCartItem(item)} className="cartDeleteBtn" />
-                            </div> 
-                       ))}
+                            </div>
+                        ))}
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="cartTotal">
